@@ -113,9 +113,11 @@
 
           <div class="row justify-content-center ">
 
-            <div class="col-lg-6 text-center ">
+            <div class="col-lg-12 text-center ">
                 <img src="/front/images/etchitam.png" alt="" style="width: 200px">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">English Tutorial Centre</h1>
+                <br>
+                <br>
+              <h1 class="mb-5 heading text-white" data-aos="fade-up" data-aos-delay="100">Pusat Kegiatan Belajar Masyarakat</h1>
               <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="{{route('frontend.contact')}}" class="btn btn-secondary">Contact us</a></p>
 
             </div>
@@ -472,12 +474,10 @@
           <div class="widget">
             <h3>Connect</h3>
             <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-instagram"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
-              <li><a href="#"><span class="icon-facebook"></span></a></li>
-              <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              <li><a href="#"><span class="icon-pinterest"></span></a></li>
-              <li><a href="#"><span class="icon-youtube"></span></a></li>
+              <li><a href="https://www.instagram.com/etcplanet/"><span class="icon-instagram"></span></a></li>
+              <li><a href="https://web.facebook.com/etcsumbar"><span class="icon-facebook"></span></a></li>
+              <li><a href="https://www.youtube.com/@englishtutorialcentre2965"><span class="icon-youtube"></span></a></li>
+              <li><a href="https://wa.me/6285363921839"><span class="icon-whatsapp"></span></a></li>
             </ul>
           </div> <!-- /.widget -->
         </div> <!-- /.col-lg-3 -->
@@ -513,7 +513,7 @@
 
       <div class="row mt-5">
         <div class="col-12 text-center">
-          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. PKBM. &mdash; English Tutorial Centre by <a href="https://untree.co">Taffy Development</a>
+          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. PKBM &mdash; English Tutorial Centre by <a href="https://www.instagram.com/fauzanantoni07/" style="color: yellow">Ahmad Fauzan Antoni</a>
           </div>
         </div>
       </div> <!-- /.container -->

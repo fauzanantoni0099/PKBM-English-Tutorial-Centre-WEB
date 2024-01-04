@@ -45,6 +45,7 @@
               <p class="mb-4">"{{$employee->kata}}"</p>
               <div class="social">
                 <a href="https://www.instagram.com/{{$employee->sosmed}}/" class="mx-2"><span class="icon-instagram"></span></a>
+                <a href="https://wa.me/62{{$employee->phone}}" class="mx-2"><span class="icon-whatsapp"></span></a>
               </div>
             </div>
           </div>

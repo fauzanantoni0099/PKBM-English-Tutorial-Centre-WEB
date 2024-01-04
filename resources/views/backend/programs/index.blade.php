@@ -68,8 +68,6 @@
                                 <div class="form-group">
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$program->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
-                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$program->id}}"
-                                       id="#myBtn" ><i class="feather icon-eye"></i></a>
                                     <form action="{{route('program.destroy',$program)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')

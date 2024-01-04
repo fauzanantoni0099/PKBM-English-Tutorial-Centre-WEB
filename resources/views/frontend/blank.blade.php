@@ -75,12 +75,10 @@
                   <div class="widget">
                       <h3>Connect</h3>
                       <ul class="list-unstyled social">
-                          <li><a href="#"><span class="icon-instagram"></span></a></li>
-                          <li><a href="#"><span class="icon-twitter"></span></a></li>
-                          <li><a href="#"><span class="icon-facebook"></span></a></li>
-                          <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                          <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                          <li><a href="#"><span class="icon-youtube"></span></a></li>
+                          <li><a href="https://www.instagram.com/etcplanet/"><span class="icon-instagram"></span></a></li>
+                          <li><a href="https://web.facebook.com/etcsumbar"><span class="icon-facebook"></span></a></li>
+                          <li><a href="https://www.youtube.com/@englishtutorialcentre2965"><span class="icon-youtube"></span></a></li>
+                          <li><a href="https://wa.me/6285363921839"><span class="icon-whatsapp"></span></a></li>
                       </ul>
                   </div> <!-- /.widget -->
               </div> <!-- /.col-lg-3 -->
@@ -116,7 +114,7 @@
 
           <div class="row mt-5">
               <div class="col-12 text-center">
-                  <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. PKBM. &mdash; English Tutorial Centre by <a href="https://untree.co">Taffy Development</a>
+                  <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. PKBM &mdash; English Tutorial Centre by <a href="https://www.instagram.com/fauzanantoni07/" style="color: yellow">Ahmad Fauzan Antoni</a>
               </div>
           </div>
       </div> <!-- /.container -->

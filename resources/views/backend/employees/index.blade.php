@@ -114,12 +114,14 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-md-4">
+                            <label>Nama</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Masukkan Nama">
                             @error('name')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
+                            <label>Jenis Kelamin</label>
                             <select name="gender" class="form-control @error('gender') is-invalid @enderror" >
                                 <option value="">--Jenis Kelamin--</option>
                                     <option value="laki-laki">Laki-laki</option>
@@ -137,12 +139,14 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" name="religion" class="form-control @error('religion') is-invalid @enderror" placeholder="Agama">
+                            <label>Agama</label>
+                            <input type="text" name="religion" class="form-control @error('religion') is-invalid @enderror">
                             @error('religion')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
+                            <label>Jabatan</label>
                             <input type="text" name="position" class="form-control @error('position') is-invalid @enderror" placeholder="Jabatan">
                             @error('position')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
@@ -156,13 +160,15 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="No.Hp">
+                            <label>No.Hp</label>
+                            <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="8xxxxxxx">
                             @error('phone')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" name="sosmed" class="form-control @error('sosmed') is-invalid @enderror" placeholder="Sosmed">
+                            <label>Instagram</label>
+                            <input type="text" name="sosmed" class="form-control @error('sosmed') is-invalid @enderror" placeholder="username">
                             @error('sosmed')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
@@ -175,12 +181,14 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-12">
+                            <label>Kata-kata Motivasi</label>
                             <textarea type="text" name="kata" class="form-control @error('kata') is-invalid @enderror" placeholder="Kata-kata Motivasi"></textarea>
                             @error('kata')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-12">
+                            <label>Alamat</label>
                             <textarea type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="Alamat"></textarea>
                             @error('address')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>

@@ -56,25 +56,6 @@
             <a href="tel://11234567890" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">0751 446988</span></a>
             <a href="mailto:etcbesmartwithus77@gmail.com" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">etcbesmartwithus77@gmail.com</span></a>
           </div>
-
-          <div class="col-6 col-lg-3 text-right">
-              @if (Route::has('login'))
-                  <div class="top-right links">
-                      @auth
-                          <a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
-                      @else
-                          <a href="{{ route('login') }}" class="small mr-3">
-                              Log In
-                          </a>
-
-                          @if (Route::has('register'))
-
-                          @endif
-                      @endauth
-                  </div>
-              @endif
-          </div>
-
         </div>
       </div>
     </div>

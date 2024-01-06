@@ -15,12 +15,13 @@ class CreateCertificatesTable extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('order_date');
             $table->unsignedBigInteger('customer_id');
             $table->string('certificate_type');
             $table->date('exam_date');
             $table->date('expired_date');
-            $table->string('score');
+            $table->string('score_1');
+            $table->string('score_2');
+            $table->string('score_3');
             $table->date('print_date');
             $table->date('collection_date');
             $table->string('status');

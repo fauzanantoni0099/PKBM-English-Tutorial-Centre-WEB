@@ -25,6 +25,11 @@
                                     <table class="table tab-content" >
                                         <tbody>
                                         <tr>
+                                            <td class="text-black">NPSN</td>
+                                            <td class="text-black">:</td>
+                                            <td class="text-capitalize text-black">{{$customer->npsn}}</td>
+                                        </tr>
+                                        <tr>
                                             <td class="text-black">Nama</td>
                                             <td class="text-black">:</td>
                                             <td class="text-capitalize text-danger">{{$customer->name}}</td>

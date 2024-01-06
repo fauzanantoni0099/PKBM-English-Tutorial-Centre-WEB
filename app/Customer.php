@@ -32,4 +32,9 @@ class Customer extends Model
     {
         return $this->belongsTo(Book::class);
     }
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+
 }

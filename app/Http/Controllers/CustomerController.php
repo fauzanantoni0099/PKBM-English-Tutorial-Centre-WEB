@@ -10,6 +10,7 @@ use App\Product;
 use App\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Psy\Util\Str;
 
 class CustomerController extends Controller
 {
@@ -78,9 +79,20 @@ class CustomerController extends Controller
                 'status'=>'required',
                 'payment_status'=>'required',
                 'payment_price'=>'required',
+                'name_path' => 'required|file|mimes:jpeg,png,pdf,jpg'
             ],$message);
 
+            if ($request->input('status_customer') == 'Siswa')
+            {
+                $npsn = str_pad(mt_rand(1, 99999999), 8, '0', STR_PAD_LEFT);
+            }
+            else
+            {
+                $npsn = "-";
+            }
+
             $customer = Customer::create([
+                'npsn'=> $npsn,
                 'date'=>$request->date,
                 'employee_id'=>$request->employee_id,
                 'program_id'=>$request->program_id,
@@ -98,8 +110,9 @@ class CustomerController extends Controller
                 'status'=>$request->status,
                 'payment_status'=>$request->payment_status,
                 'payment_price'=>$request->payment_price,
-                'remaining_payment'=>$request->payment_price - $request->price_class
+                'remaining_payment'=>$request->payment_price - $request->price_class,
             ]);
+
 
             if ($name_path=$request->input('name_path'))
             {
@@ -186,6 +199,7 @@ class CustomerController extends Controller
                 'status'=>'required',
                 'payment_status'=>'required',
                 'payment_price'=>'required',
+                'name_path' => 'required|file|mimes:jpeg,png,pdf,jpg'
             ],$message);
 
             $customer->update([
@@ -213,7 +227,7 @@ class CustomerController extends Controller
             {
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
-                $file->move(public_path('images'),$fileName);
+                $file->move('images',$fileName);
                 $fileLocation ='images/'.$fileName;
 
                 if(!$customer->images()->exists())

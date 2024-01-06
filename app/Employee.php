@@ -28,4 +28,8 @@ class Employee extends Model
     {
         return $this->hasMany(Activity::class);
     }
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

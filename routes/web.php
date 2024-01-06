@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('activity','ActivityController');
         Route::resource('comment','CommentController');
         Route::resource('folup','FolupController');
+        Route::resource('service','ServiceController');
         //table
         Route::get('/customer/table/siswa', [\App\Http\Controllers\CustomerController::class,'siswa'])->name('customer.siswa');
         Route::get('/customer/table/nonsiswa', [\App\Http\Controllers\CustomerController::class,'nonSiswa'])->name('customer.nonsiswa');

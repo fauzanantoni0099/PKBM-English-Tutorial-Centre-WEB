@@ -3,7 +3,7 @@
     <div class="breadcrumbbar">
         <div class="row align-items-center">
             <div class="col-md-8 col-lg-8">
-                <h4 class="page-title">New Class</h4>
+                <h4 class="page-title">Class</h4>
                 <div class="breadcrumb-list">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -21,9 +21,10 @@
             <div class="card-header">
                 <li class="list-inline-item">
                     <div class="searchbar">
-                        <form>
+                        <form action="{{route('newclass.index')}}" method="get">
                             <div class="input-group">
                                 <input
+                                    name="query"
                                     type="search"
                                     class="form-control"
                                     placeholder="Search"
@@ -54,22 +55,24 @@
                 <table class="table table-striped">
                     <thead class="thead-dark">
                     <th>No.</th>
-                    <th>Nama Kelas</th>
-                    <th>Nama Siswa</th>
-                    <th>No.Hp</th>
-                    <th>Tanggal Mulai</th>
-                    <th>Ket.</th>
+                    <th>NPSN</th>
+                    <th>Siswa</th>
+                    <th>Program</th>
+                    <th>Petugas</th>
+                    <th>Kelas</th>
+                    <th>Room</th>
                     <th>Aksi</th>
                     </thead>
                     <tbody>
                     @forelse($newclasses as $newclass)
                         <tr>
                             <td>{{$loop->iteration +$startIndex}}</td>
-                            <td>{{$newclass->name_class}}</td>
+                            <td>{{$newclass->customer->npsn}}</td>
                             <td>{{$newclass->customer->name}}</td>
-                            <td>{{$newclass->customer->phone}}</td>
-                            <td>{{\Carbon\Carbon::parse($newclass->start_date)->isoFormat('D MMM Y')}}</td>
-                            <td>{{$newclass->description}}</td>
+                            <td>{{$newclass->customer->program->name}}</td>
+                            <td>{{$newclass->room->employee->name}}</td>
+                            <td>{{$newclass->room->name}}</td>
+                            <td>{{$newclass->room->room}}</td>
                             <td>
                                 <div class="form-group">
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$newclass->id}}"
@@ -111,31 +114,41 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-md-3">
-                            <input type="text" name="name_class" class="form-control @error('name_class') is-invalid @enderror" placeholder="Nama Kelas">
-                            @error('name_class')
-                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-3">
-                            <select name="customer_id" class="form-control @error('customer_id') is-invalid @enderror" >
-                                <option value="">--Pilih Siswa--</option>
-                                @foreach($customers as $customer)
-                                <option value="{{$customer->id}}">{{$customer->name}}</option>
+                            <select name="room_id" class="form-control @error('room_id') is-invalid @enderror" >
+                                <option value="">--Pilih Kelas--</option>
+                                @foreach($rooms as $room)
+                                <option value="{{$room->id}}">{{$room->name}}</option>
                                 @endforeach
                             </select>
-                            @error('customer_id')
+                            @error('room_id')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Tanggal Masuk</label>
-                            <input type="date" name="start_date" class="form-control @error('start_date') is-invalid @enderror">
-                            @error('start_date')
-                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
-                            @enderror
+                        <div class="form-group col-sm-8">
+                            <label>Customer</label>
+                            <table class="table tab-content">
+                                @for($i=1; $i <= 1; $i++)
+                                    <tr>
+                                        <td>
+                                            <select class="form-control" name="customer_id" id="customer_input_{{$i}}" onchange="setPrice(this)">
+                                                <option value="">--Pilih--</option>
+                                                @foreach($customers as $customer)
+                                                    <option value="{{$customer->id}}"
+                                                            data-gender="{{$customer->gender}}"
+                                                            data-gender_id="{{$i}}"
+                                                            data-birth_date="{{\Carbon\Carbon::parse($customer->birth_date)->isoFormat('D MMMM Y')}}"
+                                                    >{{$customer->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </td>
+                                        <td id="gender_customer_{{$i}}"></td>
+                                        <td id="birth_date_customer_{{$i}}"></td>
+                                    </tr>
+                                @endfor
+                            </table>
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Catatan"></textarea>
+                            <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Deskripsi"></textarea>
                             @error('description')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
@@ -150,6 +163,17 @@
             </div>
         </div>
     </div>
-        @include('backend.newClasses.edit')
+{{--        @include('backend.newClasses.edit')--}}
 @endsection
-
+@section('js')
+    <script>
+        function setPrice(i)
+        {
+            var gender = $(i).find(':selected').data('gender');
+            var rowId = $(i).find(':selected').data('gender_id');;
+            var birth_date = $(i).find(':selected').data('birth_date');;
+            $('#gender_customer_'+rowId).text(gender);
+            $('#birth_date_customer_'+rowId).text(birth_date);
+        }
+    </script>
+@endsection

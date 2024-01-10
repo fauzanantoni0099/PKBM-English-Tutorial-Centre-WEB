@@ -36,5 +36,9 @@ class Customer extends Model
     {
         return $this->hasMany(Service::class);
     }
+    public function corporateCustomers()
+    {
+        return $this->hasMany(Corporatecustomer::class);
+    }
 
 }

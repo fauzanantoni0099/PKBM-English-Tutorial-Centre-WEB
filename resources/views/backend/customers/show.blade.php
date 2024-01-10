@@ -76,7 +76,7 @@
                                             <td>{{$customer->class_room}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-black">buku</td>
+                                            <td class="text-black">Buku</td>
                                             <td class="text-black">:</td>
                                             <td>{{$customer->book->name}}</td>
                                         </tr>

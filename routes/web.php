@@ -21,6 +21,7 @@ Route::get('/contact',[\App\Http\Controllers\FrontendController::class,'contact'
 Route::get('/from',[\App\Http\Controllers\IndoregionController::class,'from'])->name('from');
 Route::get('/getkabupaten',[\App\Http\Controllers\IndoregionController::class,'getkabupaten'])->name('getkabupaten');
 
+
 //Route::get('/', function () {
 //    return view('frontend.index');
 //});
@@ -45,9 +46,14 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('comment','CommentController');
         Route::resource('folup','FolupController');
         Route::resource('service','ServiceController');
+        Route::resource('room','RoomController');
+        Route::resource('corporatecustomer','CorporatecustomerController');
+        Route::put('/corporate/report/{corporate}', 'CorporateController@report')->name('corporate.report');
         //table
         Route::get('/customer/table/siswa', [\App\Http\Controllers\CustomerController::class,'siswa'])->name('customer.siswa');
         Route::get('/customer/table/nonsiswa', [\App\Http\Controllers\CustomerController::class,'nonSiswa'])->name('customer.nonsiswa');
+        Route::get('/customer/table/berhenti', [\App\Http\Controllers\CustomerController::class,'berhenti'])->name('customer.berhenti');
+        Route::get('/customer/table/pospone', [\App\Http\Controllers\CustomerController::class,'pospone'])->name('customer.pospone');
         Route::get('/incomingDaily', 'CustomerController@incomingDaily')->name('customer.incomingDaily');
         Route::get('/incomingMonthly', 'CustomerController@incomingMonthly')->name('customer.incomingMonthly');
         Route::get('/incomingAnnual', 'CustomerController@incomingAnnual')->name('customer.incomingAnnual');

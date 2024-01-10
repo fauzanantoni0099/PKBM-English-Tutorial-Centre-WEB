@@ -278,6 +278,11 @@
                                 >
                             </li>
                             <li>
+                                <a href="{{route('room.index')}}"
+                                ><i class="mdi mdi-circle"></i>Room</a
+                                >
+                            </li>
+                            <li>
                                 <a href="{{route('program.index')}}"
                                 ><i class="mdi mdi-circle"></i>Programs</a
                                 >
@@ -359,12 +364,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="#"
-                                ><i class="mdi mdi-circle"></i>Report Corporate</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#"
+                                <a href="{{route('corporatecustomer.index')}}"
                                 ><i class="mdi mdi-circle"></i>Siswa Corporate</a
                                 >
                             </li>
@@ -405,6 +405,16 @@
                             <li>
                                 <a href="{{route('customer.nonsiswa')}}"
                                 ><i class="mdi mdi-circle"></i>Non Siswa</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('customer.pospone')}}"
+                                ><i class="mdi mdi-circle"></i>Pospone</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('customer.berhenti')}}"
+                                ><i class="mdi mdi-circle"></i>Berhenti</a
                                 >
                             </li>
                         </ul>

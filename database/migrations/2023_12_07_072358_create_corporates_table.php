@@ -17,9 +17,10 @@ class CreateCorporatesTable extends Migration
             $table->bigIncrements('id');
             $table->date('date');
             $table->unsignedBigInteger('employee_id');
-            $table->unsignedBigInteger('customer_id');
             $table->string('program_name');
             $table->string('program_head');
+            $table->string('logo');
+            $table->string('mou');
             $table->timestamps();
         });
     }

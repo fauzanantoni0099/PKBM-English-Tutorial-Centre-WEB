@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Employee;
 use App\Newclass;
+use App\Room;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,12 +17,25 @@ class NewclassController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $newclasses = Newclass::latest()->paginate();
-        $customers = Customer::all();
+        $customers = Customer::where('status_customer','Siswa')->latest()->paginate();
+        $rooms = Room::all();
+        if ($request->input('query'))
+        {
+            $search = $request->input('query');
+            $newclasses = Newclass::whereHas('room',function ($query) use ($search){
+                $query->where('name', 'like', '%' . $search . '%');})
+                ->orWhereHas('customer',function ($query) use ($search){
+                    $query->where('name', 'like', '%' . $search . '%');})
+                ->paginate();
+        }
+        else
+        {
+            $newclasses = Newclass::latest()->paginate();
+        }
 
-        return view('backend.newClasses.index',compact('newclasses','customers'));
+        return view('backend.newClasses.index',compact('newclasses','rooms','customers'));
     }
 
     /**
@@ -45,15 +61,13 @@ class NewclassController extends Controller
                 'required'=>'Wajib Diisi!!'
             ];
             $request->validate([
-                'name_class'=>'required',
                 'customer_id'=>'required',
-                'start_date'=>'required',
-                'description'=>'required'
+                'room_id'=>'required',
+                'description'=>'required',
             ],$message);
             $newclass = Newclass::create([
-                'name_class'=>$request->name_class,
                 'customer_id'=>$request->customer_id,
-                'start_date'=>$request->start_date,
+                'room_id'=>$request->room_id,
                 'description'=>$request->description
             ]);
             toast('Data New class berhasil disimpan!!','success');

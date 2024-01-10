@@ -78,8 +78,10 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
-                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$room->id}}"
-                                       id="#myBtn" >Jadwal</a>
+                                    @if($room->ujian)
+                                        <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$room->id}}"
+                                           id="#myBtn" >Jadwal</a>
+                                    @endif
                                 </div>
                             </td>
                         </tr>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\Carrier;
+use App\Corporate;
 use App\Employee;
 use App\Gallery;
 use App\Program;
@@ -57,6 +58,12 @@ class FrontendController extends Controller
     {
         $galleries = Gallery::latest()->take(6)->get();
         return view('frontend.contact',compact('galleries'));
+    }
+    public function corporate()
+    {
+        $corporates = Corporate::all();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.corporate',compact('galleries','corporates'));
     }
 
     /**

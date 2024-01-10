@@ -145,8 +145,5 @@ class RoomController extends Controller
             return back();
         }
     }
-    public function jadwal(Request $request, Room $room)
-    {
 
-    }
 }

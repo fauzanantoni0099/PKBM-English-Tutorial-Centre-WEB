@@ -69,6 +69,7 @@
             <li><a href="{{route('frontend.staff')}}">Our Staff</a></li>
             <li><a href="{{route('frontend.news')}}">Activity</a></li>
             <li><a href="{{route('frontend.gallery')}}">Gallery</a></li>
+            <li><a href="{{route('frontend.corporate')}}">Corporate</a></li>
             <li><a href="{{route('frontend.about')}}">About</a></li>
           </ul>
 

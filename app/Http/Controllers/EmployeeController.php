@@ -178,7 +178,7 @@ class EmployeeController extends Controller
             if($request->name_path)
             {
                 $file = $request->file('name_path');
-                $fileName = $file->getClientOriginalExtension();
+                $fileName = $file->getClientOriginalName();
                 $file->move(public_path('images'),$fileName);
                 $fileLocation ='images/'.$fileName;
                 if (!$employee->images()->exists())

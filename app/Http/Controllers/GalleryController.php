@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Carrier;
 use App\Gallery;
+use App\Program;
 use App\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,7 @@ class GalleryController extends Controller
      */
     public function index(Request $request)
     {
+        $programs = Program::all();
         if ($request->input('query'))
         {
             $query = $request->input('query');
@@ -27,7 +29,7 @@ class GalleryController extends Controller
             $galleries = Gallery::latest()->paginate();
         }
 
-        return view('backend.galleries.index',compact('galleries'));
+        return view('backend.galleries.index',compact('galleries','programs'));
     }
 
     /**
@@ -58,6 +60,7 @@ class GalleryController extends Controller
                 'name_path'=>'required',
             ],$message);
             $gallery = Gallery::create([
+                'program_id'=>$request->input('program_id') ?: null,
                 'name'=>$request->name,
                 'description'=>$request->description
             ]);
@@ -124,6 +127,7 @@ class GalleryController extends Controller
                 'description'=>'required',
             ],$message);
             $gallery->update([
+                'program_id'=>$request->input('program_id') ?: null,
                 'name'=>$request->name,
                 'description'=>$request->description
             ]);

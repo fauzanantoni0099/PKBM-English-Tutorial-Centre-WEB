@@ -70,6 +70,16 @@
             <li><a href="{{route('frontend.news')}}">Activity</a></li>
             <li><a href="{{route('frontend.gallery')}}">Gallery</a></li>
             <li><a href="{{route('frontend.corporate')}}">Corporate</a></li>
+              <li class="has-children">
+                  <a href="#">Dropdown</a>
+                  <ul class="dropdown">
+                      <li><a href="{{route('frontend.ruangNgaji')}}">Ruang Ngaji</a></li>
+                      <li><a href="{{route('frontend.fabkids')}}">Fabkids</a></li>
+                      <li><a href="{{route('frontend.daichiSuku')}}">Daichi Suku</a></li>
+                      <li><a href="{{route('frontend.calistungbar')}}">Calistungbar</a></li>
+                      <li><a href="{{route('frontend.miaoZhongWen')}}">Miao Zhong Wen</a></li>
+                  </ul>
+              </li>
             <li><a href="{{route('frontend.about')}}">About</a></li>
           </ul>
 

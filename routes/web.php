@@ -19,6 +19,11 @@ Route::get('/gallery',[\App\Http\Controllers\FrontendController::class,'gallery'
 Route::get('/about',[\App\Http\Controllers\FrontendController::class,'about'])->name('frontend.about');
 Route::get('/contact',[\App\Http\Controllers\FrontendController::class,'contact'])->name('frontend.contact');
 Route::get('/corporate',[\App\Http\Controllers\FrontendController::class,'corporate'])->name('frontend.corporate');
+Route::get('/ruang-ngaji',[\App\Http\Controllers\FrontendController::class,'ruangNgaji'])->name('frontend.ruangNgaji');
+Route::get('/calistungbar',[\App\Http\Controllers\FrontendController::class,'calistungbar'])->name('frontend.calistungbar');
+Route::get('/daichi-suku',[\App\Http\Controllers\FrontendController::class,'daichiSuku'])->name('frontend.daichiSuku');
+Route::get('/fabkids',[\App\Http\Controllers\FrontendController::class,'fabkids'])->name('frontend.fabkids');
+Route::get('/miao-zhong-wen',[\App\Http\Controllers\FrontendController::class,'miaoZhongWen'])->name('frontend.miaoZhongWen');
 Route::get('/from',[\App\Http\Controllers\IndoregionController::class,'from'])->name('from');
 Route::get('/getkabupaten',[\App\Http\Controllers\IndoregionController::class,'getkabupaten'])->name('getkabupaten');
 

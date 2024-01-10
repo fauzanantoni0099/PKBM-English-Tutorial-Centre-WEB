@@ -65,6 +65,41 @@ class FrontendController extends Controller
         $galleries = Gallery::latest()->take(6)->get();
         return view('frontend.corporate',compact('galleries','corporates'));
     }
+    public function ruangNgaji()
+    {
+//        $corporates = Corporate::all();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.ruangNgaji',compact('galleries'));
+    }
+
+    public function fabkids()
+    {
+//        $corporates = Corporate::all();
+//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.fabkids',compact('galleries'));
+    }
+    public function daichiSuku()
+    {
+//        $corporates = Corporate::all();
+//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.daichiSuku',compact('galleries'));
+    }
+    public function miaoZhongWen()
+    {
+//        $corporates = Corporate::all();
+//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.miaoZhongWen',compact('galleries'));
+    }
+    public function calistungbar()
+    {
+//        $corporates = Corporate::all();
+//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.calistungbar',compact('galleries'));
+    }
 
     /**
      * Show the form for creating a new resource.

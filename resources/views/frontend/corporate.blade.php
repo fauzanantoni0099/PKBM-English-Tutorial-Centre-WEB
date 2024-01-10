@@ -27,22 +27,21 @@
   </div> <!-- /.untree_co-hero -->
 
   <div class="untree_co-section bg-light">
+      <h2 class="line-bottom text-center mb-4">Logo Corporate</h2>
     <div class="container">
         <div class="row">
             @foreach($corporates as $corporate)
         <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="0">
           <div class="staff text-center">
             <div class="mb-4">
-                    <img src="/{{$corporate->logo}}" alt="Image" class="img-fluid">
+                    <img src="/{{$corporate->logo}}" alt="Image" class="img-fluid" style="margin: 0 auto;
+			width: 200px;
+			margin-bottom: 20px;
+			border-radius: 20%;">
             </div>
             <div class="staff-body">
-{{--              <h3 class="staff-name">{{$emplo->name}}</h3>--}}
-{{--              <span class="d-block position mb-4">{{$employee->position}}</span>--}}
-{{--              <p class="mb-4">"{{$employee->kata}}"</p>--}}
-{{--              <div class="social">--}}
-{{--                <a href="https://www.instagram.com/{{$employee->sosmed}}/" class="mx-2"><span class="icon-instagram"></span></a>--}}
-{{--                <a href="https://wa.me/62{{$employee->phone}}" class="mx-2"><span class="icon-whatsapp"></span></a>--}}
-              </div>
+              <h3 class="staff-name">{{$corporate->program_name}}</h3>
+              <span class="d-block position mb-4">{{$corporate->program_head}}</span>
             </div>
           </div>
         </div>

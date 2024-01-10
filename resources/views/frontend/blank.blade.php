@@ -52,13 +52,24 @@
         <div class="site-navigation text-center">
           <p class="logo menu-absolute m-0">English Tutorial Centre<span class="text-primary">.</span></a>
 
-          <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li><a href="{{route('frontend.index')}}">Home</a></li>
-            <li><a href="{{route('frontend.staff')}}">Our Staff</a></li>
-            <li><a href="{{route('frontend.news')}}">Activity</a></li>
-            <li><a href="{{route('frontend.gallery')}}">Gallery</a></li>
-            <li><a href="{{route('frontend.about')}}">About</a></li>
-          </ul>
+            <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
+                <li><a href="{{route('frontend.index')}}">Home</a></li>
+                <li><a href="{{route('frontend.staff')}}">Our Staff</a></li>
+                <li><a href="{{route('frontend.news')}}">Activity</a></li>
+                <li><a href="{{route('frontend.gallery')}}">Gallery</a></li>
+                <li><a href="{{route('frontend.corporate')}}">Corporate</a></li>
+                <li class="has-children">
+                    <a href="#">Program</a>
+                    <ul class="dropdown">
+                        <li><a href="{{route('frontend.ruangNgaji')}}">Ruang Ngaji</a></li>
+                        <li><a href="{{route('frontend.fabkids')}}">Fabkids</a></li>
+                        <li><a href="{{route('frontend.daichiSuku')}}">Daichi Suku</a></li>
+                        <li><a href="{{route('frontend.calistungbar')}}">Calistungbar</a></li>
+                        <li><a href="{{route('frontend.miaoZhongWen')}}">Miao Zhong Wen</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{route('frontend.about')}}">About</a></li>
+            </ul>
 
         </div>
       </div>

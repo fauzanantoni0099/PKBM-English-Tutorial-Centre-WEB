@@ -56,6 +56,7 @@ class StudyController extends Controller
                 'lesson'=>'required',
                 'price'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
 
             $study = Study::create([
@@ -138,6 +139,7 @@ class StudyController extends Controller
                 'lesson'=>'required',
                 'price'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
 
             $study->update([

@@ -57,7 +57,7 @@ class GalleryController extends Controller
             $request->validate([
                 'name'=>'required',
                 'description'=>'required',
-                'name_path'=>'required',
+                'name_path'=>'required|mimes:pdf,jpeg,png,jpg',
             ],$message);
             $gallery = Gallery::create([
                 'program_id'=>$request->input('program_id') ?: null,
@@ -125,6 +125,7 @@ class GalleryController extends Controller
             $request->validate([
                 'name'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
             $gallery->update([
                 'program_id'=>$request->input('program_id') ?: null,

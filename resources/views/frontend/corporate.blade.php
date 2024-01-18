@@ -6,9 +6,9 @@
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">School Staff</h1>
+              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Corporate</h1>
               <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
-                  <p>Staff adalah individu yang dipekerjakan oleh sebuah organisasi, perusahaan, atau entitas untuk melakukan tugas-tugas tertentu sesuai dengan jabatan atau posisi yang dipegang. Mereka merupakan bagian integral dari suatu perusahaan dan bertanggung jawab atas pelaksanaan tugas-tugas yang diberikan.
+                  <p>Entity bisnis besar, terstruktur, dan dijalankan oleh manajemen profesional untuk mencapai tujuan ekonomi dan bisnisnya.
                   </p>
               </div>
 

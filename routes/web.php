@@ -20,6 +20,7 @@ Route::get('/about',[\App\Http\Controllers\FrontendController::class,'about'])->
 Route::get('/contact',[\App\Http\Controllers\FrontendController::class,'contact'])->name('frontend.contact');
 Route::get('/corporate',[\App\Http\Controllers\FrontendController::class,'corporate'])->name('frontend.corporate');
 Route::get('/ruang-ngaji',[\App\Http\Controllers\FrontendController::class,'ruangNgaji'])->name('frontend.ruangNgaji');
+Route::get('/english-tutorial-centre',[\App\Http\Controllers\FrontendController::class,'english'])->name('frontend.english');
 Route::get('/calistungbar',[\App\Http\Controllers\FrontendController::class,'calistungbar'])->name('frontend.calistungbar');
 Route::get('/daichi-suku',[\App\Http\Controllers\FrontendController::class,'daichiSuku'])->name('frontend.daichiSuku');
 Route::get('/fabkids',[\App\Http\Controllers\FrontendController::class,'fabkids'])->name('frontend.fabkids');

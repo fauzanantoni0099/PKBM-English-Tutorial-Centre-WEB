@@ -7,12 +7,12 @@
                 <div class="col-12">
                     <div class="row justify-content-center ">
                         <div class="col-lg-6 text-center ">
-                            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Elements</h1>
+                            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Miao Zhong Wen</h1>
                             <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
-                                <p>Another free template by <a href="https://untree.co/" target="_blank" class="link-highlight">Untree.co</a>. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.</p>
+                                <p>Belajar Mandarin melibatkan karakter, nada, kosa kata, dan budaya Tiongkok. Praktik berbicara dan menulis membantu memperkuat kemampuan bahasa.</p>
                             </div>
 
-                            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore courses</a></p>
+                            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="{{route('frontend.contact')}}" class="btn btn-secondary">Contact Us</a></p>
 
                         </div>
 
@@ -35,94 +35,59 @@
                 <div class="col-lg-12">
                     <div class="custom-block" data-aos="fade-up">
                         <center>
-                            <h2 class="section-title">Accordion</h2>
+                        <h2 class="section-title mb-3">Les Bahasa Mandarin di Miao Zhong Wen</h2>
                         </center>
-                        <div class="custom-accordion" id="accordion_1">
-                            <div class="accordion-item">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How to download and register?</button>
-                                </h2>
-
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
-                                    <div class="accordion-body">
-                                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-                                    </div>
-                                </div>
-                            </div> <!-- .accordion-item -->
-
-                            <div class="accordion-item">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">How to create your paypal account?</button>
-                                </h2>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
-                                    <div class="accordion-body">
-                                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                                    </div>
-                                </div>
-                            </div> <!-- .accordion-item -->
-                            <div class="accordion-item">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How to link your paypal and bank account?</button>
-                                </h2>
-
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
-                                    <div class="accordion-body">
-                                        When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
-                                    </div>
-                                </div>
-
-                            </div> <!-- .accordion-item -->
-
-                        </div>
+                        <p>Tahukan kamu bahwa bahasa Mandarin memiliki jumlah penutur terbanyak kedua setelah bahasa
+                            Inggris? Berdasarkan data tahun 2022, penutur bahasa Mandarin berjumlah 1,10
+                            miliar, lho. Apakah Anda tertarik mempelajari bahasa Mandarin dan sedang mencari tempat les
+                            yang tepat?
+                        </p>
+                        <p>Sebagai bahasa yang cukup tua, banyak negara yang menggunakan bahasa Mandarin.
+                            Penggunaan bahasa Mandarin semakin meningkat sehingga banyak orang tertarik belajar bahasa
+                            Mandarin. Belajar bahasa Mandarin bisa dilakukan melalui lembaga kursus yang terpercaya. Dan
+                            Miao Zhong Wen adalah salah satu kursus bahasa Mandarin sudah berpengalaman mengajar
+                            ratusan makasiswa dan pelajar sejak tahun 2021, sehingga kami bisa membantu proses belajar
+                            bahasa Mandarin dengan lebih efektif dan terarah.
+                        </p>
+                        <p>Miao Zhong Wen Kursus Bahasa Mandarin Terpercaya di kota Padang</p>
+                        <p>Kami menyediakan tutor-tutor yang sudah tersertifikasi dan memiliki kemampuan dalam bidang
+                            bahasa Mandarin. Kamu bisa memilih kursus bahasa Mandarin online atau offline untuk
+                            menunjang proses belajarmu lebih baik lagi.
+                        </p>
+                        <p>Kami menyediakan kursus bahasa Mandarin secara online dan offline dengan berbagai pilihan.
+                            Tersedia kelas reguler, private 1-on-1 dan private group. Kelas reguler sangat cocok bagi kamu
+                            yang ingin belajar dengan teman-teman baru dari berbagai latar belakang dan kota dimana saja
+                        </p>
+                        <p>Tersedia kelas reguler dengan waktu 2 x seminggu dan kelas intensif dengan waktu 4-5x
+                            seminggu. Kelas reguler dibatasi maksimal 10 orang per kelasnya jadi kamu tetap mudah
+                            berinteraksi dengan tutor saat belajar bahasa Mandarin.
+                        </p>
+                        <p>Kelas private 1-on-1 merupakan kelas eksklusif bagi kamu yang ingin jadwal kelasnya lebih
+                            fleksible atau lebih fokus untuk meningkatkan kemampuan bahasa Mandarin. Interaksi penuh
+                            secara intensif 1-on-1 dengan laoshi selama 1.45 jam per meeting.
+                        </p>
+                        <p>Sementara kelas private group sangat cocok bagi kamu yang ingin belajar bersama teman atau
+                            kerabat terdekatmu secara eksklusif. Kamu bisa menentukan jumlah kelas 1-4 orang dengan
+                            durasi kelas selama 2 jam per meeting.
+                        </p>
+                        <p>Percayakan proses belajar Bahasa mandarin yang interaktif, berkualitas, terarah dan terukur
+                            kepada kami, Miao Zhong Wen</p>
                     </div> <!-- END .custom-block -->
+
                     <div class="custom-block" data-aos="fade-up">
                         <center>
                             <h2 class="section-title">Gallery</h2>
                         </center>
                         <div class="row gutter-v2 gallery">
-                            <div class="col-4">
-                                <a href="images/gal_1.jpg" class="gal-item" data-fancybox="gal"><img src="/front/images/gal_1.jpg" alt="Image" class="img-fluid"></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="images/gal_2.jpg" class="gal-item" data-fancybox="gal"><img src="/front/images/gal_2.jpg" alt="Image" class="img-fluid"></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="images/gal_3.jpg" class="gal-item" data-fancybox="gal"><img src="/front/images/gal_3.jpg" alt="Image" class="img-fluid"></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="images/gal_4.jpg" class="gal-item" data-fancybox="gal"><img src="/front/images/gal_4.jpg" alt="Image" class="img-fluid"></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="images/gal_5.jpg" class="gal-item" data-fancybox="gal"><img src="/front/images/gal_5.jpg" alt="Image" class="img-fluid"></a>
-                            </div>
-                            <div class="col-4">
-                                <a href="images/gal_6.jpg" class="gal-item" data-fancybox="gal"><img src="/front/images/gal_6.jpg" alt="Image" class="img-fluid"></a>
-                            </div>
+                            @foreach($gallerys as $gallery)
+                                <div class="col-4">
+                                    @foreach($gallery->images as $image)
+                                        <a href="{{$image->name_path}}" class="gal-item" data-fancybox="gal"><img src="/{{$image->name_path}}" alt="Image" class="img-fluid"></a>
+                                    @endforeach
+                                </div>
+                            @endforeach
                         </div>
                     </div> <!-- END .custom-block -->
-
-                    <div class="custom-block" data-aos="fade-up">
-                        <center>
-                            <h2 class="section-title">Video</h2>
-                        </center>
-
-                        <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
-                            <span class="play-wrap"><span class="icon-play"></span></span>
-                            <img src="/front/images/hero_bg.jpg" alt="Image" class="img-fluid rounded">
-                        </a>
-                    </div> <!-- END .custom-block -->
-
-                    <div class="custom-block" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Check Unordered List</h2>
-
-                        <ul class="list-unstyled ul-check primary">
-                            <li>Far far away, behind the word</li>
-                            <li>Far from the countries Vokalia</li>
-                            <li>Separated they live in Bookmarksgrove</li>
-                        </ul>
-
-                    </div> <!-- END .custom-block -->
-
                 </div> <!-- /.col-lg-6 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->

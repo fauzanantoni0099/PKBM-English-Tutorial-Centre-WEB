@@ -64,6 +64,7 @@ class EmployeeController extends Controller
                 'entered_date'=>'required',
                 'phone'=>'required',
                 'address'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
 
             $employee = Employee::create([
@@ -161,6 +162,7 @@ class EmployeeController extends Controller
                 'kata'=>'required',
                 'phone'=>'required',
                 'address'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
                 ],$message);
 
             $employee->update([

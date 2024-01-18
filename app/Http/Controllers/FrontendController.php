@@ -67,38 +67,47 @@ class FrontendController extends Controller
     }
     public function ruangNgaji()
     {
-//        $corporates = Corporate::all();
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','Ruang Ngaji');})->get();
         $galleries = Gallery::latest()->take(6)->get();
-        return view('frontend.ruangNgaji',compact('galleries'));
+        return view('frontend.ruangNgaji',compact('galleries','gallerys'));
     }
 
     public function fabkids()
     {
-//        $corporates = Corporate::all();
-//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','FABKidZ');})->get();
         $galleries = Gallery::latest()->take(6)->get();
-        return view('frontend.fabkids',compact('galleries'));
+        return view('frontend.fabkids',compact('galleries','gallerys'));
     }
     public function daichiSuku()
     {
 //        $corporates = Corporate::all();
-//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $gallerys = Gallery::whereHas('program',function ($query){
+                    $query->where('name','Daichii Juku');})->latest()->take(6)->get();
         $galleries = Gallery::latest()->take(6)->get();
-        return view('frontend.daichiSuku',compact('galleries'));
+        return view('frontend.daichiSuku',compact('galleries','gallerys'));
     }
     public function miaoZhongWen()
     {
-//        $corporates = Corporate::all();
-//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','Miao Zhong Wen');})->get();
         $galleries = Gallery::latest()->take(6)->get();
-        return view('frontend.miaoZhongWen',compact('galleries'));
+        return view('frontend.miaoZhongWen',compact('galleries','gallerys'));
     }
     public function calistungbar()
     {
-//        $corporates = Corporate::all();
-//        $galleries = Gallery::where('program_id','')->latest()->take(6)->get();
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','Calistungbar');})->get();
         $galleries = Gallery::latest()->take(6)->get();
-        return view('frontend.calistungbar',compact('galleries'));
+        return view('frontend.calistungbar',compact('galleries','gallerys'));
+    }
+    public function english()
+    {
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','English Tutorial Centre');})->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.english',compact('galleries','gallerys'));
     }
 
     /**

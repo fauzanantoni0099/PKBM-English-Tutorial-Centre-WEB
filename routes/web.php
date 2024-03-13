@@ -18,8 +18,16 @@ Route::get('/news',[\App\Http\Controllers\FrontendController::class,'news'])->na
 Route::get('/gallery',[\App\Http\Controllers\FrontendController::class,'gallery'])->name('frontend.gallery');
 Route::get('/about',[\App\Http\Controllers\FrontendController::class,'about'])->name('frontend.about');
 Route::get('/contact',[\App\Http\Controllers\FrontendController::class,'contact'])->name('frontend.contact');
+Route::get('/corporate',[\App\Http\Controllers\FrontendController::class,'corporate'])->name('frontend.corporate');
+Route::get('/ruang-ngaji',[\App\Http\Controllers\FrontendController::class,'ruangNgaji'])->name('frontend.ruangNgaji');
+Route::get('/english-tutorial-centre',[\App\Http\Controllers\FrontendController::class,'english'])->name('frontend.english');
+Route::get('/calistungbar',[\App\Http\Controllers\FrontendController::class,'calistungbar'])->name('frontend.calistungbar');
+Route::get('/daichi-suku',[\App\Http\Controllers\FrontendController::class,'daichiSuku'])->name('frontend.daichiSuku');
+Route::get('/fabkids',[\App\Http\Controllers\FrontendController::class,'fabkids'])->name('frontend.fabkids');
+Route::get('/miao-zhong-wen',[\App\Http\Controllers\FrontendController::class,'miaoZhongWen'])->name('frontend.miaoZhongWen');
 Route::get('/from',[\App\Http\Controllers\IndoregionController::class,'from'])->name('from');
 Route::get('/getkabupaten',[\App\Http\Controllers\IndoregionController::class,'getkabupaten'])->name('getkabupaten');
+
 
 //Route::get('/', function () {
 //    return view('frontend.index');
@@ -44,9 +52,15 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('activity','ActivityController');
         Route::resource('comment','CommentController');
         Route::resource('folup','FolupController');
+        Route::resource('service','ServiceController');
+        Route::resource('room','RoomController');
+        Route::resource('corporatecustomer','CorporatecustomerController');
+        Route::put('/corporate/report/{corporate}', 'CorporateController@report')->name('corporate.report');
         //table
         Route::get('/customer/table/siswa', [\App\Http\Controllers\CustomerController::class,'siswa'])->name('customer.siswa');
         Route::get('/customer/table/nonsiswa', [\App\Http\Controllers\CustomerController::class,'nonSiswa'])->name('customer.nonsiswa');
+        Route::get('/customer/table/berhenti', [\App\Http\Controllers\CustomerController::class,'berhenti'])->name('customer.berhenti');
+        Route::get('/customer/table/pospone', [\App\Http\Controllers\CustomerController::class,'pospone'])->name('customer.pospone');
         Route::get('/incomingDaily', 'CustomerController@incomingDaily')->name('customer.incomingDaily');
         Route::get('/incomingMonthly', 'CustomerController@incomingMonthly')->name('customer.incomingMonthly');
         Route::get('/incomingAnnual', 'CustomerController@incomingAnnual')->name('customer.incomingAnnual');
@@ -66,6 +80,6 @@ Route::middleware(['auth'])->group(function (){
 //backend
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');

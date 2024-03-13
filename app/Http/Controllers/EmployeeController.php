@@ -64,6 +64,7 @@ class EmployeeController extends Controller
                 'entered_date'=>'required',
                 'phone'=>'required',
                 'address'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
 
             $employee = Employee::create([
@@ -78,31 +79,31 @@ class EmployeeController extends Controller
                 'phone'=>$request->phone,
                 'address'=>$request->address
             ]);
-            if ($request->name_path)
-            {
-                $file = $request->file('name_path');
-                $fileName = $file->getClientOriginalName();
-                $file->move(public_path('images'),$fileName);
-                $fileLocation ='images/'.$fileName;
-
-                if(!$employee->images()->exists())
+                if ($request->name_path)
                 {
-                    $employee->images()->create([
-                        'name_path'=>$fileLocation,
-                        'imageable_id'=>$employee->id,
-                        'imageable_type'=>Employee::class
-                    ]);
-                }
-                else
-                {
-                    $employee->images()->update([
-                        'name_path'=>$fileLocation,
-                        'imageable_id'=>$employee->id,
-                        'imageable_type'=>Employee::class
-                    ]);
-                }
+                    $file = $request->file('name_path');
+                    $fileName = $file->getClientOriginalName();
+                    $file->move(public_path('images'),$fileName);
+                    $fileLocation ='images/'.$fileName;
 
-            }
+                    if(!$employee->images()->exists())
+                    {
+                        $employee->images()->create([
+                            'name_path'=>$fileLocation,
+                            'imageable_id'=>$employee->id,
+                            'imageable_type'=>Employee::class
+                        ]);
+                    }
+                    else
+                    {
+                        $employee->images()->update([
+                            'name_path'=>$fileLocation,
+                            'imageable_id'=>$employee->id,
+                            'imageable_type'=>Employee::class
+                        ]);
+                    }
+
+                }
             toast('Data karyawan berhasil disimpan!!','success');
             DB::commit();
             return redirect()->route('employee.index',$employee);
@@ -161,6 +162,7 @@ class EmployeeController extends Controller
                 'kata'=>'required',
                 'phone'=>'required',
                 'address'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
                 ],$message);
 
             $employee->update([

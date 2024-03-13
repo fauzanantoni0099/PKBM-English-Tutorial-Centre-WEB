@@ -10,6 +10,7 @@ use App\Product;
 use App\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Psy\Util\Str;
 
 class CustomerController extends Controller
 {
@@ -78,9 +79,20 @@ class CustomerController extends Controller
                 'status'=>'required',
                 'payment_status'=>'required',
                 'payment_price'=>'required',
+                'name_path' => 'required|file|mimes:jpeg,png,pdf,jpg'
             ],$message);
 
+            if ($request->input('status_customer') == 'Siswa')
+            {
+                $npsn = str_pad(mt_rand(1, 99999999), 8, '0', STR_PAD_LEFT);
+            }
+            else
+            {
+                $npsn = "-";
+            }
+
             $customer = Customer::create([
+                'npsn'=> $npsn,
                 'date'=>$request->date,
                 'employee_id'=>$request->employee_id,
                 'program_id'=>$request->program_id,
@@ -98,21 +110,34 @@ class CustomerController extends Controller
                 'status'=>$request->status,
                 'payment_status'=>$request->payment_status,
                 'payment_price'=>$request->payment_price,
-                'remaining_payment'=>$request->payment_price - $request->price_class
+                'remaining_payment'=>$request->payment_price - $request->price_class,
             ]);
 
-            if ($name_path=$request->input('name_path'))
+
+            if ($request->name_path)
             {
                 $file = $request->file('name_path');
                 $fileName = $file->getClientOriginalName();
                 $file->move(public_path('images'),$fileName);
                 $fileLocation ='images/'.$fileName;
 
-                $customer->images()->create([
-                     $name_path =>$fileLocation,
-                    'imageable_id'=>$customer->id,
-                    'imageable_type'=>Customer::class
-                ]);
+                if(!$customer->images()->exists())
+                {
+                    $customer->images()->create([
+                        'name_path'=>$fileLocation,
+                        'imageable_id'=>$customer->id,
+                        'imageable_type'=>Customer::class
+                    ]);
+                }
+                else
+                {
+                    $customer->images()->update([
+                        'name_path'=>$fileLocation,
+                        'imageable_id'=>$customer->id,
+                        'imageable_type'=>Customer::class
+                    ]);
+                }
+
             }
             $book = Book::find($request->book_id);
             if ($customer->payment_status == 'lunas')
@@ -128,7 +153,7 @@ class CustomerController extends Controller
         catch (Exception $exception)
         {
             toast('Data kostumer gagal disimpan!!','error');
-            DB::commit();
+            DB::rollBack();
             return back();
         }
     }
@@ -165,29 +190,6 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         try {
-            $message = [
-                'required'=>'Wajib disi!!'
-            ];
-            $request->validate([
-                'date'=>'required',
-                'employee_id'=>'required',
-                'program_id'=>'required',
-                'book_id'=>'required',
-                'class_room'=>'required',
-                'price_class'=>'required',
-                'register'=>'required',
-                'status_customer'=>'required',
-                'name'=>'required',
-                'gender'=>'required',
-                'birth_date'=>'required',
-                'school'=>'required',
-                'address'=>'required',
-                'phone'=>'required',
-                'status'=>'required',
-                'payment_status'=>'required',
-                'payment_price'=>'required',
-            ],$message);
-
             $customer->update([
                 'date'=>$request->date,
                 'employee_id'=>$request->employee_id,
@@ -208,6 +210,7 @@ class CustomerController extends Controller
                 'payment_price'=>$request->payment_price,
                 'remaining_payment'=>$request->payment_price - $request->price_class,
             ]);
+
 
             if ($request->name_path)
             {
@@ -241,14 +244,14 @@ class CustomerController extends Controller
                 $book->increment('stock',$ss);
             }
 
-            toast('Data kostumer berhasil diedit!!','success');
             DB::commit();
+            toast('Data berhasil diedit!!','success');
             return redirect()->route('customer.index',$customer);
         }
-        catch (Exception $exception)
+        catch (\Exception $exception)
         {
-            toast('Data kostumer gagal diedit!!','error');
-            DB::commit();
+            DB::rollBack();
+            toast('Data gagal diedit!!','error');
             return back();
         }
     }
@@ -287,6 +290,18 @@ class CustomerController extends Controller
         $customers = Customer::where('status_customer','Non Siswa')->latest()->paginate();
 
         return view('backend.tables.nonsiswa',compact('customers'));
+    }
+    public function berhenti()
+    {
+        $customers = Customer::where('status','Berhenti')->latest()->paginate();
+
+        return view('backend.tables.berhenti',compact('customers'));
+    }
+    public function pospone()
+    {
+        $customers = Customer::where('status','Pospone')->latest()->paginate();
+
+        return view('backend.tables.pospone',compact('customers'));
     }
     public function incomingDaily()
     {

@@ -12,4 +12,8 @@ class Newclass extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\Carrier;
+use App\Corporate;
 use App\Employee;
 use App\Gallery;
 use App\Program;
@@ -57,6 +58,56 @@ class FrontendController extends Controller
     {
         $galleries = Gallery::latest()->take(6)->get();
         return view('frontend.contact',compact('galleries'));
+    }
+    public function corporate()
+    {
+        $corporates = Corporate::all();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.corporate',compact('galleries','corporates'));
+    }
+    public function ruangNgaji()
+    {
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','Ruang Ngaji');})->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.ruangNgaji',compact('galleries','gallerys'));
+    }
+
+    public function fabkids()
+    {
+        $gallerys = Gallery::WhereHas('program',function ($query){
+            $query->where('name','FABKidZ');})->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.fabkids',compact('gallerys','galleries'));
+    }
+    public function daichiSuku()
+    {
+//        $corporates = Corporate::all();
+        $gallerys = Gallery::whereHas('program',function ($query){
+                    $query->where('name','Daichii Juku');})->latest()->take(6)->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.daichiSuku',compact('galleries','gallerys'));
+    }
+    public function miaoZhongWen()
+    {
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','Miao Zhong Wen');})->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.miaoZhongWen',compact('galleries','gallerys'));
+    }
+    public function calistungbar()
+    {
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','Calistungbar');})->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.calistungbar',compact('galleries','gallerys'));
+    }
+    public function english()
+    {
+        $gallerys = Gallery::whereHas('program',function ($query){
+            $query->where('name','English Tutorial Centre');})->get();
+        $galleries = Gallery::latest()->take(6)->get();
+        return view('frontend.english',compact('galleries','gallerys'));
     }
 
     /**

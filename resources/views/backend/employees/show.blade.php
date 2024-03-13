@@ -14,7 +14,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-6">
                                 @forelse($employee->images as $image)
-                                    <img src="/{{$image->name_path}}" class="card-img h-100" alt="Card image" style="width: 500px">
+                                    <a href="/{{$image->name_path}}"><img src="/{{$image->name_path}}" class="card-img h-100" alt="Card image" style="width: 500px"></a>
                                 @empty
                                     <img src="/assets/images/orang.jpg" class="card-img h-100" alt="Card image" style="width: 500px">
                                 @endforelse

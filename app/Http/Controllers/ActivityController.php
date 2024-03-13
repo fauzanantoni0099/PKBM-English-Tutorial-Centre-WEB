@@ -56,6 +56,7 @@ class ActivityController extends Controller
                 'employee_id'=>'required',
                 'date'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
             $activity = Activity::create([
                 'name'=>$request->name,
@@ -135,6 +136,7 @@ class ActivityController extends Controller
                 'employee_id'=>'required',
                 'date'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
             $activity->update([
                 'name'=>$request->name,

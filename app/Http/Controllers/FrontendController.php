@@ -75,10 +75,10 @@ class FrontendController extends Controller
 
     public function fabkids()
     {
-        $gallerys = Gallery::whereHas('program',function ($query){
+        $gallerys = Gallery::WhereHas('program',function ($query){
             $query->where('name','FABKidZ');})->get();
         $galleries = Gallery::latest()->take(6)->get();
-        return view('frontend.fabkids',compact('galleries','gallerys'));
+        return view('frontend.fabkids',compact('gallerys','galleries'));
     }
     public function daichiSuku()
     {

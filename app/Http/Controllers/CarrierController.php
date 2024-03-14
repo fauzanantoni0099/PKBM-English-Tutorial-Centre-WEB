@@ -54,6 +54,7 @@ class CarrierController extends Controller
             $request->validate([
                 'name'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
             $carrier = Carrier::create([
                 'name'=>$request->name,
@@ -136,6 +137,7 @@ class CarrierController extends Controller
             $request->validate([
                 'name'=>'required',
                 'description'=>'required',
+                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
             ],$message);
             $carrier->update([
                 'name'=>$request->name,

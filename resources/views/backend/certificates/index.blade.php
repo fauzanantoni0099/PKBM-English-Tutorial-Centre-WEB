@@ -170,39 +170,48 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Score</label>
-                            <select name="score" class="form-control @error('score') is-invalid @enderror" >
-                                <option value="">--Score--</option>
-                                <option value="Section 1">Section 1</option>
-                                <option value="Section 2">Section 2</option>
-                                <option value="Section 3">Section 3</option>
-                            </select>
-                            @error('score')
+                            <label>Score 1</label>
+                            <input type="number" name="score_1" class="form-control @error('score_1') is-invalid @enderror">
+                            @error('score_1')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Tanggal Cetak</label>
-                            <input type="date" name="print_date" class="form-control @error('print_date') is-invalid @enderror" placeholder="Tanggal Lahir">
-                            @error('print_date')
+                            <label>Score 2</label>
+                            <input type="number" name="score_2" class="form-control @error('score_2') is-invalid @enderror">
+                            @error('score_2')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Tanggal Pengambilan</label>
-                            <input type="date" name="collection_date" class="form-control @error('collection_date') is-invalid @enderror" placeholder="Tanggal Lahir">
-                            @error('collection_date')
+                            <label>Score 3</label>
+                            <input type="number" name="score_3" class="form-control @error('score_3') is-invalid @enderror">
+                            @error('score_3')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
                             <label>Status</label>
                             <select name="status" class="form-control @error('status') is-invalid @enderror" >
-                                <option value="">--Status Pembayaran--</option>
-                                <option value="Sudah bayar">Sudah bayar</option>
-                                <option value="Belum bayar">Belum bayar</option>
+                                <option value="">--Status--</option>
+                                <option value="Sudah bayar">Lulus</option>
+                                <option value="Belum bayar">Remedial</option>
                             </select>
                             @error('status')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Tanggal Cetak</label>
+                            <input type="date" name="print_date" class="form-control @error('print_date') is-invalid @enderror">
+                            @error('print_date')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Tanggal Pengambilan</label>
+                            <input type="date" name="collection_date" class="form-control @error('collection_date') is-invalid @enderror">
+                            @error('collection_date')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>

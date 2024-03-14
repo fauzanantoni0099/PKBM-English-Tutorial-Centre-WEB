@@ -32,4 +32,13 @@ class Customer extends Model
     {
         return $this->belongsTo(Book::class);
     }
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+    public function corporateCustomers()
+    {
+        return $this->hasMany(Corporatecustomer::class);
+    }
+
 }

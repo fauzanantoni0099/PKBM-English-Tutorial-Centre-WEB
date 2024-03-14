@@ -15,9 +15,8 @@ class CreateNewclassesTable extends Migration
     {
         Schema::create('newclasses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_class');
+            $table->unsignedBigInteger('room_id');
             $table->unsignedBigInteger('customer_id');
-            $table->date('start_date');
             $table->text('description');
             $table->timestamps();
         });

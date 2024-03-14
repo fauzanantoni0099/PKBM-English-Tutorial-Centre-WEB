@@ -57,10 +57,10 @@
                     <th>Tanggal</th>
                     <th>Petugas/CRE</th>
                     <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Program</th>
-                    <th>Kepala</th>
+                    <th>Ketua</th>
+                    <th>Logo</th>
+                    <th>MOU</th>
+                    <th>Laporan</th>
                     <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -69,11 +69,19 @@
                             <td>{{$loop->iteration +$startIndex}}</td>
                             <td>{{\Carbon\Carbon::parse($corporate->date)->isoFormat('D MMM Y')}}</td>
                             <td>{{$corporate->employee->name}}</td>
-                            <td>{{$corporate->customer->name}}</td>
-                            <td>{{$corporate->customer->gender}}</td>
-                            <td>{{\Carbon\Carbon::parse($corporate->customer->birth_date)->isoFormat('D MMMM Y')}}</td>
                             <td>{{$corporate->program_name}}</td>
                             <td>{{$corporate->program_head}}</td>
+                            <td>
+                                <a href="/{{$corporate->logo}}"><img src="/{{$corporate->logo}}" alt="" style="width: 100px"></a>
+                            </td>
+                            <td>    <a href="{{ asset($corporate->mou) }}" target="_blank"><img src="/assets/images/pdf.png" style="width: 50px"></a></td>
+                            <td>
+                                @forelse($corporate->images as $image)
+                                    <a href="/{{$image->name_path}}" target="_blank"><img src="/assets/images/pdf.png" style="width: 50px"></a>
+                                @empty
+                                    <img src="/assets/images/file kosong.png" class="card-img h-100" alt="Card image" style="width: 50px">
+                                @endforelse
+                            </td>
                             <td>
                                 <div class="form-group">
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$corporate->id}}"
@@ -83,6 +91,8 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal-{{$corporate->id}}"
+                                       id="#myBtn">Report</a>
                                 </div>
                             </td>
                         </tr>
@@ -147,42 +157,19 @@
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
-                        <div class="form-group col-sm-12">
-                            <label>Customer</label>
-                            <table class="table tab-content">
-                                <thead>
-                                <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Sekolah/Pekerjaan</th>
-                                <th>Alamat</th>
-                                <th>No.Hp</th>
-                                </thead>
-                                @for($i=1; $i <= 1; $i++)
-                                    <tr>
-                                        <td>
-                                            <select class="form-control" name="customer_id" id="customer_input_{{$i}}" onchange="setPrice(this)">
-                                                <option value="">--Pilih--</option>
-                                                @foreach($customers as $customer)
-                                                    <option value="{{$customer->id}}"
-                                                            data-gender="{{$customer->gender}}"
-                                                            data-gender_id="{{$i}}"
-                                                            data-birth_date="{{\Carbon\Carbon::parse($customer->birth_date)->isoFormat('D MMMM Y')}}"
-                                                            data-school="{{$customer->school}}"
-                                                            data-address="{{$customer->address}}"
-                                                            data-phone="{{$customer->phone}}"
-                                                    >{{$customer->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </td>
-                                        <td id="gender_customer_{{$i}}"></td>
-                                        <td id="birth_date_customer_{{$i}}"></td>
-                                        <td id="school_customer_{{$i}}"></td>
-                                        <td id="address_customer_{{$i}}"></td>
-                                        <td id="phone_customer_{{$i}}"></td>
-                                    </tr>
-                                @endfor
-                            </table>
+                        <div class="form-group col-md-3">
+                            <label>Logo : </label>
+                            <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror" >
+                            @error('logo')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>MOU : </label>
+                            <input type="file" name="mou" class="form-control @error('mou') is-invalid @enderror" >
+                            @error('mou')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -194,8 +181,9 @@
             </div>
         </div>
     </div>
-        @include('backend.corporates.edit')
+{{--        @include('backend.corporates.edit')--}}
 {{--        @include('backend.corporates.show')--}}
+        @include('backend.corporates.report')
 @endsection
 @section('js')
     <script>

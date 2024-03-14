@@ -59,7 +59,9 @@
                     <th>Tanggal</th>
                     <th>Nama</th>
                     <th>Kelas</th>
+                    <th>Program</th>
                     <th>Harga</th>
+                    <th>Status Customer</th>
                     <th>Status</th>
                     <th>Status Pembayaran</th>
                     <th>Aksi</th>
@@ -71,7 +73,9 @@
                             <td>{{\Carbon\Carbon::parse($customer->date)->isoFormat('D MMM Y')}}</td>
                             <td>{{$customer->name}}</td>
                             <td>{{$customer->class_room}}</td>
+                            <td>{{$customer->program->name}}</td>
                             <td>Rp.{{number_format($customer->price_class,0,',',',')}}</td>
+                            <td>{{$customer->status_customer}}</td>
                             <td>{{$customer->status}}</td>
                             <td>{{$customer->payment_status}}</td>
                             <td>
@@ -143,6 +147,18 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
+                            <select name="class_room" class="form-control @error('class_room') is-invalid @enderror" >
+                                <option value="">--Pilih Kelas--</option>
+                                <option value="-">Tidak Ada</option>
+                                <option value="Reguler">Reguler</option>
+                                <option value="Privat">Privat</option>
+                                <option value="One to one">One to one</option>
+                            </select>
+                            @error('class_room')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
                             <select name="program_id" class="form-control @error('program_id') is-invalid @enderror" >
                                 <option value="">--Pilih Program--</option>
                                 @foreach($programs as $program)
@@ -154,30 +170,8 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" name="class_room" class="form-control @error('class_room') is-invalid @enderror" placeholder="Masukkan Kelas">
-                            @error('class_room')
-                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="number" name="price_class" class="form-control @error('price_class') is-invalid @enderror" placeholder="Harga Kelas">
+                            <input type="number" name="price_class" class="form-control @error('price_class') is-invalid @enderror" placeholder="Harga">
                             @error('price_class')
-                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="number" name="register" class="form-control @error('register') is-invalid @enderror" placeholder="Jumlah registrasi">
-                            @error('register')
-                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <select name="status_customer" class="form-control @error('status_customer') is-invalid @enderror" >
-                                <option value="">--Status Customer--</option>
-                                <option value="Siswa">Siswa</option>
-                                <option value="Non Siswa">Non Siswa</option>
-                            </select>
-                            @error('status_customer')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
@@ -204,6 +198,22 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
+                            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="No.Hp">
+                            @error('phone')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
+                            <select name="status_customer" class="form-control @error('status_customer') is-invalid @enderror" >
+                                <option value="">--Status Customer--</option>
+                                <option value="Siswa">Siswa</option>
+                                <option value="Non Siswa">Non Siswa</option>
+                            </select>
+                            @error('status_customer')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
                             <select name="book_id" class="form-control @error('book_id') is-invalid @enderror" >
                                 <option value="">--Pilih Buku--</option>
                                 @foreach($books as $book)
@@ -221,20 +231,22 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="No.Hp">
-                            @error('phone')
+                            <select name="status" class="form-control @error('status') is-invalid @enderror" >
+                                <option value="">--Status Client--</option>
+                                <option value="-">None</option>
+                                <option value="Baru">Baru</option>
+                                <option value="Menunggu">Menunggu</option>
+                                <option value="Mulai">Mulai</option>
+                                <option value="Berhenti">Berhenti</option>
+                                <option value="Pospone">Pospone</option>
+                            </select>
+                            @error('payment_status')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
-                            <select name="status" class="form-control @error('status') is-invalid @enderror" >
-                                <option value="">--Status Client--</option>
-                                <option value="kosong">None</option>
-                                <option value="baru">Baru</option>
-                                <option value="menunggu">Menunggu</option>
-                                <option value="mulai">Mulai</option>
-                            </select>
-                            @error('payment_status')
+                            <input type="number" name="register" class="form-control @error('register') is-invalid @enderror" placeholder="Jumlah registrasi">
+                            @error('register')
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>

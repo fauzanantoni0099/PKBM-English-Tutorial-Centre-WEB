@@ -25,6 +25,11 @@
                                     <table class="table tab-content" >
                                         <tbody>
                                         <tr>
+                                            <td class="text-black">NPSN</td>
+                                            <td class="text-black">:</td>
+                                            <td class="text-capitalize text-black">{{$customer->npsn}}</td>
+                                        </tr>
+                                        <tr>
                                             <td class="text-black">Nama</td>
                                             <td class="text-black">:</td>
                                             <td class="text-capitalize text-danger">{{$customer->name}}</td>
@@ -71,7 +76,7 @@
                                             <td>{{$customer->class_room}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-black">buku</td>
+                                            <td class="text-black">Buku</td>
                                             <td class="text-black">:</td>
                                             <td>{{$customer->book->name}}</td>
                                         </tr>

@@ -16,4 +16,12 @@ class Corporate extends Model
     {
         return $this->belongsTo(Employee::class);
     }
+    public function corporateCustomers()
+    {
+        return $this->hasMany(Corporatecustomer::class);
+    }
+    public function images()
+    {
+        return $this->morphMany(Image::class,'imageable');
+    }
 }

@@ -28,4 +28,20 @@ class Employee extends Model
     {
         return $this->hasMany(Activity::class);
     }
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+    public function corporateCustomers()
+    {
+        return $this->hasMany(Corporatecustomer::class);
+    }
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
+    public function newclasses()
+    {
+        return $this->hasMany(Newclass::class);
+    }
 }

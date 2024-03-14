@@ -12,4 +12,8 @@ class Gallery extends Model
     {
         return $this->morphMany(Image::class,'imageable');
     }
+    public function program()
+    {
+        return $this->belongsTo(Program::class);
+    }
 }

@@ -49,272 +49,6 @@
 </head>
 <body class="vertical-layout">
 <!-- Start Infobar Notifications Sidebar -->
-<div
-    id="infobar-notifications-sidebar"
-    class="infobar-notifications-sidebar"
->
-    <div
-        class="
-          infobar-notifications-sidebar-head
-          d-flex
-          w-100
-          justify-content-between
-        "
-    >
-        <h4>Notifications</h4>
-        <a
-            href="javascript:void(0)"
-            id="infobar-notifications-close"
-            class="infobar-notifications-close"
-        ><img
-                src="/assets/images/svg-icon/close.svg"
-                class="img-fluid menu-hamburger-close"
-                alt="close"
-            /></a>
-    </div>
-    <div class="infobar-notifications-sidebar-body">
-        <ul
-            class="nav nav-pills nav-justified"
-            id="infobar-pills-tab"
-            role="tablist"
-        >
-            <li class="nav-item">
-                <a
-                    class="nav-link active"
-                    id="pills-messages-tab"
-                    data-toggle="pill"
-                    href="#pills-messages"
-                    role="tab"
-                    aria-controls="pills-messages"
-                    aria-selected="true"
-                >Messages</a
-                >
-            </li>
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    id="pills-emails-tab"
-                    data-toggle="pill"
-                    href="#pills-emails"
-                    role="tab"
-                    aria-controls="pills-emails"
-                    aria-selected="false"
-                >Emails</a
-                >
-            </li>
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    id="pills-actions-tab"
-                    data-toggle="pill"
-                    href="#pills-actions"
-                    role="tab"
-                    aria-controls="pills-actions"
-                    aria-selected="false"
-                >Actions</a
-                >
-            </li>
-        </ul>
-        <div class="tab-content" id="infobar-pills-tabContent">
-            <div
-                class="tab-pane fade show active"
-                id="pills-messages"
-                role="tabpanel"
-                aria-labelledby="pills-messages-tab"
-            >
-                <ul class="list-unstyled">
-                        <li class="media">
-                            <img
-                                class="mr-3 align-self-center rounded-circle"
-                                src="/assets/images/users/girl.svg"
-                                alt="Generic placeholder image"
-                            />
-                            <div class="media-body">
-                                <h5>
-                                    Amy Adams<span class="badge badge-success">1</span
-                                    ><span class="timing">Jan 22</span>
-                                </h5>
-                                <p>Hey!! What are you doing tonight ?</p>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <img
-                                class="mr-3 align-self-center rounded-circle"
-                                src="/assets/images/users/boy.svg"
-                                alt="Generic placeholder image"
-                            />
-                            <div class="media-body">
-                                <h5>
-                                    James Simpsons<span class="badge badge-success">2</span
-                                    ><span class="timing">Feb 15</span>
-                                </h5>
-                                <p>What's up ???</p>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <img
-                                class="mr-3 align-self-center rounded-circle"
-                                src="/assets/images/users/men.svg"
-                                alt="Generic placeholder image"
-                            />
-                            <div class="media-body">
-                                <h5>
-                                    Mark Witherspoon<span class="badge badge-success">3</span
-                                    ><span class="timing">Mar 03</span>
-                                </h5>
-                                <p>I will be late today in office.</p>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <img
-                                class="mr-3 align-self-center rounded-circle"
-                                src="/assets/images/users/women.svg"
-                                alt="Generic placeholder image"
-                            />
-                            <div class="media-body">
-                                <h5>
-                                    Jenniffer Wills<span class="badge badge-success">4</span
-                                    ><span class="timing">Apr 05</span>
-                                </h5>
-                                <p>Venture presentation is ready.</p>
-                            </div>
-                        </li>
-                </ul>
-            </div>
-            <div
-                class="tab-pane fade"
-                id="pills-emails"
-                role="tabpanel"
-                aria-labelledby="pills-emails-tab"
-            >
-                <ul class="list-unstyled">
-                    <li class="media">
-                        <span class="mr-3 align-self-center img-icon">N</span>
-                        <div class="media-body">
-                            <h5>Nelson Smith<span class="timing">Jan 22</span></h5>
-                            <p>
-                                <span class="badge badge-danger-inverse">WORK</span>Salary
-                                has been processed.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <span class="mr-3 align-self-center img-icon">C</span>
-                        <div class="media-body">
-                            <h5>
-                                Courtney Cox<i
-                                    class="feather icon-star text-warning ml-2"
-                                ></i
-                                ><span class="timing">Feb 15</span>
-                            </h5>
-                            <p>
-                                <span class="badge badge-success-inverse">URGENT</span>New
-                                product launching...
-                            </p>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <span class="mr-3 align-self-center img-icon">R</span>
-                        <div class="media-body">
-                            <h5>Rachel White<span class="timing">Mar 03</span></h5>
-                            <p>
-                    <span class="badge badge-secondary-inverse">ORDER</span
-                    ><span class="badge badge-info-inverse">SHOPPING</span>Your
-                                order has been...
-                            </p>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <span class="mr-3 align-self-center img-icon">F</span>
-                        <div class="media-body">
-                            <h5>Freepik<span class="timing">Mar 03</span></h5>
-                            <p>
-                                <a href="#" class="badge badge-primary mr-2">VERIFY NOW</a
-                                >New Sign verification req...
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div
-                class="tab-pane fade"
-                id="pills-actions"
-                role="tabpanel"
-                aria-labelledby="pills-actions-tab"
-            >
-                <ul class="list-unstyled">
-                    <li class="media">
-                <span class="mr-3 action-icon badge badge-success-inverse"
-                ><i class="feather icon-check"></i
-                    ></span>
-                        <div class="media-body">
-                            <h5 class="action-title">Payment Success !!!</h5>
-                            <p class="my-3">
-                                We have received your payment toward ad Account :
-                                9876543210. Your Ad is Running.
-                            </p>
-                            <p>
-                    <span class="badge badge-danger-inverse">INFO</span
-                    ><span class="badge badge-info-inverse">STATUS</span
-                                ><span class="timing">Today, 09:39 PM</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="media">
-                <span class="mr-3 action-icon badge badge-primary-inverse"
-                ><i class="feather icon-calendar"></i
-                    ></span>
-                        <div class="media-body">
-                            <h5 class="action-title">Nobita Applied for Leave.</h5>
-                            <p class="my-3">
-                                Nobita applied for leave due to personal reasons on 22nd
-                                Feb.
-                            </p>
-                            <p>
-                    <span class="badge badge-success">APPROVE</span
-                    ><span class="badge badge-danger">REJECT</span
-                                ><span class="timing">Yesterday, 05:25 PM</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="media">
-                <span class="mr-3 action-icon badge badge-danger-inverse"
-                ><i class="feather icon-alert-triangle"></i
-                    ></span>
-                        <div class="media-body">
-                            <h5 class="action-title">Alert</h5>
-                            <p class="my-3">
-                                There has been new Log in fron your account at Melbourne.
-                                Mark it safe or report.
-                            </p>
-                            <p>
-                                <i class="feather icon-check text-success mr-3"></i
-                                ><a href="#" class="text-muted">Report Now</a
-                                ><span class="timing">5 Jan 2019, 02:13 PM</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="media">
-                <span class="mr-3 action-icon badge badge-warning-inverse"
-                ><i class="feather icon-award"></i
-                    ></span>
-                        <div class="media-body">
-                            <h5 class="action-title">Congratulations !!!</h5>
-                            <p class="my-3">
-                                Your role in the organization has been changed from Editor
-                                to Chief Strategist.
-                            </p>
-                            <p>
-                    <span class="badge badge-danger-inverse">ACTIVITY</span
-                    ><span class="timing">10 Jan 2019, 08:49 PM</span>
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="infobar-notifications-sidebar-overlay"></div>
 <!-- End Infobar Notifications Sidebar -->
 <!-- Start Infobar Setting Sidebar -->
@@ -534,10 +268,69 @@
                         </a>
                         <ul class="vertical-submenu">
                             <li>
+                                <a href="{{route('book.index')}}"
+                                ><i class="mdi mdi-circle"></i>Book</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('newclass.index')}}"
+                                ><i class="mdi mdi-circle"></i>Class</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('room.index')}}"
+                                ><i class="mdi mdi-circle"></i>Room</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('program.index')}}"
+                                ><i class="mdi mdi-circle"></i>Programs</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('expenses.index')}}"
+                                ><i class="mdi mdi-circle"></i>Expenses</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javaScript:void();">
+                            <img
+                                src="/assets/images/svg-icon/advanced.svg"
+                                class="img-fluid"
+                                alt="dashboard"
+                            /><span>Employees</span
+                            ><i class="feather icon-chevron-right pull-right"></i>
+                        </a>
+                        <ul class="vertical-submenu">
+                            <li>
                                 <a href="{{route('employee.index')}}"
                                 ><i class="mdi mdi-circle"></i>Employees</a
                                 >
                             </li>
+                            <li>
+                                <a href="{{route('mistake.index')}}"
+                                ><i class="mdi mdi-circle"></i>Mistake</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('overtime.index')}}"
+                                ><i class="mdi mdi-circle"></i>Over Time</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javaScript:void();">
+                            <img
+                                src="/assets/images/svg-icon/user.svg"
+                                class="img-fluid"
+                                alt="dashboard"
+                            /><span>Customer</span
+                            ><i class="feather icon-chevron-right pull-right"></i>
+                        </a>
+                        <ul class="vertical-submenu">
                             <li>
                                 <a href="{{route('customer.index')}}"
                                 ><i class="mdi mdi-circle"></i>Customers</a
@@ -549,18 +342,30 @@
                                 >
                             </li>
                             <li>
-                                <a href="{{route('book.index')}}"
-                                ><i class="mdi mdi-circle"></i>Book</a
+                                <a href="{{route('service.index')}}"
+                                ><i class="mdi mdi-circle"></i>School Service Program</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javaScript:void();">
+                            <img
+                                src="/assets/images/svg-icon/form_elements.svg"
+                                class="img-fluid"
+                                alt="dashboard"
+                            /><span>Corporates</span
+                            ><i class="feather icon-chevron-right pull-right"></i>
+                        </a>
+                        <ul class="vertical-submenu">
+                            <li>
+                                <a href="{{route('corporate.index')}}"
+                                ><i class="mdi mdi-circle"></i>Corporate</a
                                 >
                             </li>
                             <li>
-                                <a href="{{route('mistake.index')}}"
-                                ><i class="mdi mdi-circle"></i>Mistake</a
-                                >
-                            </li>
-                            <li>
-                                <a href="{{route('newclass.index')}}"
-                                ><i class="mdi mdi-circle"></i>New Class</a
+                                <a href="{{route('corporatecustomer.index')}}"
+                                ><i class="mdi mdi-circle"></i>Siswa Corporate</a
                                 >
                             </li>
                         </ul>
@@ -578,26 +383,6 @@
                             <li>
                                 <a href="{{route('certificate.index')}}"
                                 ><i class="mdi mdi-circle"></i>Certificates</a
-                                >
-                            </li>
-                            <li>
-                                <a href="{{route('program.index')}}"
-                                ><i class="mdi mdi-circle"></i>Programs</a
-                                >
-                            </li>
-                            <li>
-                                <a href="{{route('corporate.index')}}"
-                                ><i class="mdi mdi-circle"></i>Corporates</a
-                                >
-                            </li>
-                            <li>
-                                <a href="{{route('expenses.index')}}"
-                                ><i class="mdi mdi-circle"></i>Expenses</a
-                                >
-                            </li>
-                            <li>
-                                <a href="{{route('overtime.index')}}"
-                                ><i class="mdi mdi-circle"></i>Over Time</a
                                 >
                             </li>
                         </ul>
@@ -620,6 +405,16 @@
                             <li>
                                 <a href="{{route('customer.nonsiswa')}}"
                                 ><i class="mdi mdi-circle"></i>Non Siswa</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('customer.pospone')}}"
+                                ><i class="mdi mdi-circle"></i>Pospone</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('customer.berhenti')}}"
+                                ><i class="mdi mdi-circle"></i>Berhenti</a
                                 >
                             </li>
                         </ul>
@@ -751,22 +546,6 @@
                     <div class="infobar">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item">
-                                <div class="notifybar">
-                                    <a
-                                        href="javascript:void(0)"
-                                        id="infobar-notifications-open"
-                                        class="infobar-icon"
-                                    >
-                                        <img
-                                            src="/assets/images/svg-icon/notifications.svg"
-                                            class="img-fluid"
-                                            alt="notifications"
-                                        />
-                                        <span class="live-icon"></span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="list-inline-item">
                                 <div class="settingbar">
                                     <a
                                         href="javascript:void(0)"
@@ -779,43 +558,6 @@
                                             alt="settings"
                                         />
                                     </a>
-                                </div>
-                            </li>
-                            <li class="list-inline-item">
-                                <div class="languagebar">
-                                    <div class="dropdown">
-                                        <a
-                                            class="dropdown-toggle"
-                                            href="#"
-                                            role="button"
-                                            id="languagelink"
-                                            data-toggle="dropdown"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                        ><i class="flag flag-icon-us flag-icon-squared"></i
-                                            ></a>
-                                        <div
-                                            class="dropdown-menu dropdown-menu-right"
-                                            aria-labelledby="languagelink"
-                                        >
-                                            <a class="dropdown-item" href="#"
-                                            ><i class="flag flag-icon-us flag-icon-squared"></i
-                                                >English</a
-                                            >
-                                            <a class="dropdown-item" href="#"
-                                            ><i class="flag flag-icon-cn flag-icon-squared"></i
-                                                >Chinese</a
-                                            >
-                                            <a class="dropdown-item" href="#"
-                                            ><i class="flag flag-icon-ru flag-icon-squared"></i
-                                                >Russian</a
-                                            >
-                                            <a class="dropdown-item" href="#"
-                                            ><i class="flag flag-icon-es flag-icon-squared"></i
-                                                >Spanish</a
-                                            >
-                                        </div>
-                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -841,7 +583,7 @@
         <!-- Start Footerbar -->
         <div class="footerbar">
             <footer class="footer">
-                <p class="mb-0">© 2024 PKBM - Taffy Development.</p>
+                <p class="mb-0">© 2024 PKBM - English Tutorial Centre by <a  href="https://www.instagram.com/fauzanantoni07/" style="color: blue">Ahmad Fauzan Antoni</a>.</p>
             </footer>
         </div>
         <!-- End Footerbar -->

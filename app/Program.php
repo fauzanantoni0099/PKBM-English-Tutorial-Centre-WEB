@@ -12,4 +12,8 @@ class Program extends Model
     {
         return $this->hasMany(Customer::class);
     }
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
 }

@@ -57,24 +57,6 @@
             <a href="mailto:etcbesmartwithus77@gmail.com" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">etcbesmartwithus77@gmail.com</span></a>
           </div>
 
-          <div class="col-6 col-lg-3 text-right">
-              @if (Route::has('login'))
-                  <div class="top-right links">
-                      @auth
-                          <a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
-                      @else
-                          <a href="{{ route('login') }}" class="small mr-3">
-                              Log In
-                          </a>
-
-                          @if (Route::has('register'))
-
-                          @endif
-                      @endauth
-                  </div>
-              @endif
-          </div>
-
         </div>
       </div>
     </div>
@@ -88,6 +70,17 @@
             <li><a href="{{route('frontend.staff')}}">Our Staff</a></li>
             <li><a href="{{route('frontend.news')}}">Activity</a></li>
             <li><a href="{{route('frontend.gallery')}}">Gallery</a></li>
+              <li class="has-children">
+                              <a href="#">Program</a>
+                              <ul class="dropdown">
+                                  <li><a href="{{route('frontend.english')}}">English Tutorial Centre</a></li>
+                                  <li><a href="{{route('frontend.fabkids')}}">FABKidZ</a></li>
+                                  <li><a href="{{route('frontend.daichiSuku')}}">Daichii Juku</a></li>
+                                  <li><a href="{{route('frontend.miaoZhongWen')}}">Miao Zhong Wen</a></li>
+                                  <li><a href="{{route('frontend.ruangNgaji')}}">Ruang Ngaji</a></li>
+                                  <li><a href="{{route('frontend.calistungbar')}}">Calistungbar</a></li>
+                              </ul>
+                          </li>
             <li><a href="{{route('frontend.about')}}">About</a></li>
           </ul>
 

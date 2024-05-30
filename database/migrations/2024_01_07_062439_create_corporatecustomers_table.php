@@ -17,7 +17,11 @@ class CreateCorporatecustomersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('employee_id');
             $table->unsignedBigInteger('corporate_id');
-            $table->unsignedBigInteger('customer_id');
+            $table->string('name');
+            $table->string('gender');
+            $table->date('birth_date');
+            $table->text('address');
+            $table->string('phone');
             $table->timestamps();
         });
     }

@@ -1,4 +1,5 @@
 @extends('home')
+@can('index mistake')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -46,10 +47,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input mistake')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -74,13 +77,17 @@
                             <td>{{$mistake->description}}</td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit mistake')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$mistake->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete mistake')
                                     <form action="{{route('mistake.destroy',$mistake)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -156,4 +163,5 @@
     </div>
         @include('backend.mistakes.edit')
 @endsection
+@endcan
 

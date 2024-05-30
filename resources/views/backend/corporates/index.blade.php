@@ -1,4 +1,5 @@
 @extends('home')
+@can('index corporate')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -44,10 +45,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input corporate')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -84,15 +87,21 @@
                             </td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit corporate')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$corporate->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete corporate')
                                     <form action="{{route('corporate.destroy',$corporate)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    @endcan
+                                        @can('edit corporate')
                                     <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal-{{$corporate->id}}"
                                        id="#myBtn">Report</a>
+                                        @endcan
                                 </div>
                             </td>
                         </tr>
@@ -203,4 +212,5 @@
         }
     </script>
 @endsection
+@endcan
 

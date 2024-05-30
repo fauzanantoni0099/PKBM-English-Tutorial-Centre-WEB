@@ -44,12 +44,15 @@
                         </form>
                     </div>
                 </li>
+                @can('tambah testimonial')
                 <div class="float-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
                 </div>
+                @endcan
+
             </div>
             <div class="card-body col-md-12">
                 <table class="table table-striped">
@@ -79,13 +82,17 @@
                             @endforelse
                             <td>
                                 <div class="form-group">
+                                    @can('edit testimonial')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$testimonial->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete testimonial')
                                     <form action="{{route('testimonial.destroy',$testimonial)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>

@@ -1,4 +1,5 @@
 @extends('home')
+@can('index room')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -45,10 +46,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input class')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -71,17 +74,23 @@
                             <td>{{$room->description}}</td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit room')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$room->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete room')
                                     <form action="{{route('room.destroy',$room)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    @endcan
+                                    @can('edit room')
                                     @if($room->ujian)
                                         <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$room->id}}"
                                            id="#myBtn" >Jadwal</a>
                                     @endif
+                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -158,4 +167,5 @@
         @include('backend.rooms.edit')
         @include('backend.rooms.show')
 @endsection
+@endcan
 

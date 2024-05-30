@@ -1,4 +1,5 @@
 @extends('home')
+@can('index student-corporate')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -45,10 +46,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input student-corporate')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -57,8 +60,9 @@
                     <th>No.</th>
                     <th>Petugas/CRE</th>
                     <th>Corporate</th>
-                    <th>NPSN Siswa</th>
-                    <th>Siswa</th>
+                    <th>Nama</th>
+                    <th>Tanggal Lahir</th>
+                    <th>No.hp</th>
                     <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -67,19 +71,26 @@
                             <td>{{$loop->iteration +$startIndex}}</td>
                             <td>{{$corporatecustomer->employee->name}}</td>
                             <td>{{$corporatecustomer->corporate->program_name}}</td>
-                            <td>{{$corporatecustomer->customer->npsn}}</td>
-                            <td>{{$corporatecustomer->customer->name}}</td>
+                            <td>{{$corporatecustomer->name}}</td>
+                            <td>{{$corporatecustomer->birth_date}}</td>
+                            <td>{{$corporatecustomer->phone}}</td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit student-coporate')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$corporatecustomer->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('index student-corporate')
                                     <a href="" class="btn btn-outline-secondary" data-toggle="modal" data-target="#showModal-{{$corporatecustomer->id}}"
                                        id="#myBtn" ><i class="feather icon-eye"></i></a>
+                                        @endcan
+                                        @can('delete student-corporate')
                                     <form action="{{route('corporatecustomer.destroy',$corporatecustomer)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                        @endcan
                                 </div>
                             </td>
                         </tr>
@@ -111,7 +122,7 @@
                     @csrf
                 <div class="modal-body">
                     <div class="row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label>Petugas/CRE : </label>
                             <select name="employee_id" class="form-control @error('employee_id') is-invalid @enderror" >
                                 <option value="">--Pilih Petugas--</option>
@@ -123,7 +134,7 @@
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label>Petugas/CRE : </label>
                             <select name="corporate_id" class="form-control @error('employee_id') is-invalid @enderror" >
                                 <option value="">--Pilih Corporate--</option>
@@ -135,28 +146,51 @@
                             <span class="invalid-feedback text-capitalize">{{$message}}</span>
                             @enderror
                         </div>
-                        <div class="form-group col-sm-8">
-                            <label>Customer</label>
+                        <div class="form-group col-sm-12">
+                            <center>
+                            <label style="font-weight: bold;font-size: x-large">Customer</label>
+                            </center>
                             <table class="table tab-content">
-                                @for($i=1; $i <= 1; $i++)
                                     <tr>
                                         <td>
-                                            <select class="form-control" name="customer_id" id="customer_input_{{$i}}" onchange="setPrice(this)">
-                                                <option value="">--Pilih--</option>
-                                                @foreach($customers as $customer)
-                                                    <option value="{{$customer->id}}"
-                                                            data-gender="{{$customer->gender}}"
-                                                            data-gender_id="{{$i}}"
-                                                            data-birth_date="{{\Carbon\Carbon::parse($customer->birth_date)->isoFormat('D MMMM Y')}}"
-                                                    >{{$customer->name}}</option>
-                                                @endforeach
-                                            </select>
+                                            <label>Nama : </label>
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" >
+                                            @error('name')
+                                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                                            @enderror
                                         </td>
-                                        <td id="gender_customer_{{$i}}"></td>
-                                        <td id="birth_date_customer_{{$i}}"></td>
+                                        <td>
+                                            <label>Jenis Kelamin : </label>
+                                            <select name="gender" class="form-control @error('gender') is-invalid @enderror" >
+                                                <option value="">--Pilih--</option>
+                                                <option value="laki-laki">Laki-laki</option>
+                                                <option value="perempuan">Perempuan</option>
+                                            </select>
+                                            @error('gender')
+                                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                                            @enderror
+                                        </td>
+                                        <td>
+                                            <label>Tanggal Lahir : </label>
+                                            <input type="date" name="date" class="form-control @error('date') is-invalid @enderror" >
+                                            @error('date')
+                                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                                            @enderror
+                                        </td>
+                                        <td>
+                                            <label>No.Hp : </label>
+                                            <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" >
+                                            @error('phone')
+                                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                                            @enderror
+                                        </td>
                                     </tr>
-                                @endfor
                             </table>
+                            <label>Alamat : </label>
+                            <textarea type="text" name="name" class="form-control @error('name') is-invalid @enderror" ></textarea>
+                            @error('name')
+                            <span class="invalid-feedback text-capitalize">{{$message}}</span>
+                            @enderror
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -183,4 +217,5 @@
         }
     </script>
 @endsection
+@endcan
 

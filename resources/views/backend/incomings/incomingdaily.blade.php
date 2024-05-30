@@ -1,4 +1,5 @@
 @extends('home')
+@can('Incoming')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -74,3 +75,4 @@
         </div>
     </div>
     @endsection
+@endcan

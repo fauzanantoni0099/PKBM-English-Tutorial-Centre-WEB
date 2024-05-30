@@ -138,7 +138,8 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="file" name="name_path" class="form-control" placeholder="Pekerjaan">
+                            <input type="file" name="name_path" class="form-control">
+                            <label style="font-size: 10px" >MAX:2048 | jpeg,png,jpg</label>
                         </div>
                         <div class="form-group col-md-12">
                             <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Deskripsi"></textarea>

@@ -10,13 +10,13 @@
                 </button>
             </div>
                 <div class="modal-body">
-                    <div class="card m-b-30">
-                        <div class="row no-gutters">
+                    <div class="card mb-3" style="max-width: 900px;">
+                        <div class="row g-0">
                             <div class="col-md-6">
                                 @forelse($employee->images as $image)
-                                    <a href="/{{$image->name_path}}"><img src="/{{$image->name_path}}" class="card-img h-100" alt="Card image" style="width: 500px"></a>
+                                    <a href="/{{$image->name_path}}"><img src="/{{$image->name_path}}" class="img-fluid rounded-start" alt="Card image" style="width: 500px"></a>
                                 @empty
-                                    <img src="/assets/images/orang.jpg" class="card-img h-100" alt="Card image" style="width: 500px">
+                                    <img src="/assets/images/orang.jpg" class="img-fluid rounded-start " alt="Card image" style="width: 500px">
                                 @endforelse
                             </div>
                             <div class="col-md-6">

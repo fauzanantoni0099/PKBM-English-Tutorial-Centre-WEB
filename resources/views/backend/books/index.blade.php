@@ -1,4 +1,5 @@
 @extends('home')
+@can('index book')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -46,10 +47,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input book')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -70,13 +73,17 @@
                             <td>{{$book->description}}</td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit book')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$book->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete book')
                                     <form action="{{route('book.destroy',$book)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -138,4 +145,5 @@
     </div>
         @include('backend.books.edit')
 @endsection
+@endcan
 

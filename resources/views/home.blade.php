@@ -268,6 +268,21 @@
                         </a>
                         <ul class="vertical-submenu">
                             <li>
+                                <a href="{{route('permission.index')}}"
+                                ><i class="mdi mdi-circle"></i>Permission</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('role.index')}}"
+                                ><i class="mdi mdi-circle"></i>Roles</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{route('user.index')}}"
+                                ><i class="mdi mdi-circle"></i>Users</a
+                                >
+                            </li>
+                            <li>
                                 <a href="{{route('book.index')}}"
                                 ><i class="mdi mdi-circle"></i>Book</a
                                 >
@@ -439,20 +454,22 @@
 {{--                            <li><a href="chart-chartjs.html"><i class="mdi mdi-circle"></i>Incoming Annual</a></li>--}}
 {{--                        </ul>--}}
 {{--                    </li>--}}
-                    <li class="vertical-header">Front End</li>
-                    <li>
-                        <a href="javaScript:void();">
-                            <img src="/assets/images/svg-icon/layouts.svg" class="img-fluid" alt="layouts"><span>Layouts</span><i class="feather icon-chevron-right pull-right"></i>
-                        </a>
-                        <ul class="vertical-submenu">
-                            <li><a href="{{route('testimonial.index')}}"><i class="mdi mdi-circle"></i>Testimonial</a></li>
-                            <li><a href="{{route('study.index')}}"><i class="mdi mdi-circle"></i>Study</a></li>
-                            <li><a href="{{route('carrier.index')}}"><i class="mdi mdi-circle"></i>Carrier</a></li>
-                            <li><a href="{{route('gallery.index')}}"><i class="mdi mdi-circle"></i>Gallery</a></li>
-                            <li><a href="{{route('activity.index')}}"><i class="mdi mdi-circle"></i>Activity</a></li>
-                            <li><a href="{{route('comment.index')}}"><i class="mdi mdi-circle"></i>Comment</a></li>
-                        </ul>
-                    </li>
+                    @can('layout')
+                        <li class="vertical-header">Front End</li>
+                        <li>
+                            <a href="javaScript:void();">
+                                <img src="/assets/images/svg-icon/layouts.svg" class="img-fluid" alt="layouts"><span>Layouts</span><i class="feather icon-chevron-right pull-right"></i>
+                            </a>
+                            <ul class="vertical-submenu">
+                                <li><a href="{{route('testimonial.index')}}"><i class="mdi mdi-circle"></i>Testimonial</a></li>
+                                <li><a href="{{route('study.index')}}"><i class="mdi mdi-circle"></i>Study</a></li>
+                                <li><a href="{{route('carrier.index')}}"><i class="mdi mdi-circle"></i>Carrier</a></li>
+                                <li><a href="{{route('gallery.index')}}"><i class="mdi mdi-circle"></i>Gallery</a></li>
+                                <li><a href="{{route('activity.index')}}"><i class="mdi mdi-circle"></i>Activity</a></li>
+                                <li><a href="{{route('comment.index')}}"><i class="mdi mdi-circle"></i>Comment</a></li>
+                            </ul>
+                        </li>
+                    @endcan
                 </ul>
             </div>
             <!-- End Navigationbar -->

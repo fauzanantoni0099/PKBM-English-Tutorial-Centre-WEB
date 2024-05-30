@@ -55,6 +55,9 @@ Route::middleware(['auth'])->group(function (){
         Route::resource('service','ServiceController');
         Route::resource('room','RoomController');
         Route::resource('corporatecustomer','CorporatecustomerController');
+        Route::resource('user','UserController');
+        Route::resource('role','RoleController');
+        Route::resource('permission','PermissionController');
         Route::put('/corporate/report/{corporate}', 'CorporateController@report')->name('corporate.report');
         //table
         Route::get('/customer/table/siswa', [\App\Http\Controllers\CustomerController::class,'siswa'])->name('customer.siswa');
@@ -80,6 +83,7 @@ Route::middleware(['auth'])->group(function (){
 //backend
 
 
-Auth::routes(['register' => false]);
+Auth::routes();
+//['register' => false]
 
 Route::get('/home', 'HomeController@index')->name('home');

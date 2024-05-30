@@ -1,4 +1,5 @@
 @extends('home')
+@can('index class')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -45,10 +46,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input class')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -75,13 +78,17 @@
                             <td>{{$newclass->room->room}}</td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit class')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$newclass->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete class')
                                     <form action="{{route('newclass.destroy',$newclass)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -177,3 +184,4 @@
         }
     </script>
 @endsection
+@endcan

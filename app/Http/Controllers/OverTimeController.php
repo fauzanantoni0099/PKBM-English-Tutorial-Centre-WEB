@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class OvertimeController extends Controller
+class OverTimeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,6 @@ class OvertimeController extends Controller
     {
         $overtimes = Overtime::latest()->paginate();
         $employees = Employee::all();
-
         return view('backend.overtimes.index',compact('overtimes','employees'));
     }
 

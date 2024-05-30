@@ -56,7 +56,7 @@ class StudyController extends Controller
                 'lesson'=>'required',
                 'price'=>'required',
                 'description'=>'required',
-                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
 
             $study = Study::create([
@@ -86,14 +86,13 @@ class StudyController extends Controller
                     ]);
                 }
             }
+            toast('Data berhasil ditambahkan','success');
             DB::commit();
-            toast('Data study berhasil di simpan!!','success');
             return redirect()->route('study.index',$study);
-
         }
         catch (\Exception $exception)
         {
-            toast('Data study gagal di simpan!!','error');
+            toast('Data gagal ditambahkan','error');
             DB::rollBack();
             return back();
         }
@@ -139,7 +138,7 @@ class StudyController extends Controller
                 'lesson'=>'required',
                 'price'=>'required',
                 'description'=>'required',
-                'name_path'=>'|mimes:pdf,jpeg,png,jpg'
+                'name_path'=>'mimes:jpeg,png,jpg,JPG,JPEG|max:2048'
             ],$message);
 
             $study->update([

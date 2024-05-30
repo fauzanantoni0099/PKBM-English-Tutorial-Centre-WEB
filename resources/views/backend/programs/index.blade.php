@@ -1,4 +1,5 @@
 @extends('home')
+@can('index program')
 @section('content')
     <div class="breadcrumbbar">
         <div class="row align-items-center">
@@ -44,10 +45,12 @@
                     </div>
                 </li>
                 <div class="float-right">
+                    @can('input program')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                             id="#myBtn">
                         Input <li class="fa fa-cloud-upload"></li>
                     </button>
+                    @endcan
                 </div>
             </div>
             <div class="card-body col-md-12">
@@ -66,13 +69,17 @@
                             <td>{{$program->description}}</td>
                             <td>
                                 <div class="form-group">
+                                    @can('edit program')
                                     <a href="" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal-{{$program->id}}"
                                        id="#myBtn" ><i class="feather icon-edit-2"></i></a>
+                                    @endcan
+                                    @can('delete program')
                                     <form action="{{route('program.destroy',$program)}}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger"><i class="feather icon-trash"></i></button>
                                     </form>
+                                        @endcan
                                 </div>
                             </td>
                         </tr>
@@ -129,3 +136,4 @@
         @include('backend.programs.edit')
 {{--        @include('backend.programs.show')--}}
 @endsection
+@endcan

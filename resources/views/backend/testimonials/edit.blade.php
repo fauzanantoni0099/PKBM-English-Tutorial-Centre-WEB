@@ -1,3 +1,4 @@
+@can('edit testimonial')
 @foreach($testimonials as $testimonial)
 <div class="modal fade" id="exampleModal-{{$testimonial->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -58,3 +59,4 @@
     </script>
 @endsection
 @endforeach
+@endcan
